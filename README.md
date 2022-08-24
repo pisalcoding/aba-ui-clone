@@ -2,7 +2,7 @@
 An Android UI clone of ABA Mobile app for education purpose only.
 
 # Project Specs 
-  - Language: Android
+  - Language: Kotlin
   - UI Design system: XML-based
   - Design pattern: MVVM
   
