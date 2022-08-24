@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:icon="@drawable/ic_scheduled_trx_drawer"
+        android:title="Scheduled Payment" />
+    <item
+        android:icon="@drawable/ic_checkbook_drawer"
+        android:title="Checkbook" />
+    <item
+        android:icon="@drawable/ic_places_drawer_menu"
+        android:title="ABA PAY Places" />
+    <item
+        android:icon="@drawable/ic_baseline_currency_exchange_24"
+        android:title="Exchange Rates" />
+    <item
+        android:icon="@drawable/ic_locator_drawer"
+        android:title="Locator" />
+    <item
+        android:icon="@drawable/ic_round_person_add_alt_1_24"
+        android:title="Invite Friend" />
+    <item
+        android:icon="@drawable/ic_contact_us_drawer"
+        android:title="Contact Us" />
+    <item
+        android:icon="@drawable/ic_terms_conditions"
+        android:title="Terms &amp; Conditions" />
+    <item
+        android:icon="@drawable/ic_settings_drawer"
+        android:title="Settings" />
+</menu>

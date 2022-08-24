@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="gridMenus"
+            type="java.util.List&lt;me.pisal.abaclone.model.entity.MenuModel&gt;" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.home.HomeFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:background="?colorPrimaryVariant">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/item_home_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:item="@{gridMenus[0]}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz"
+                        android:rotation="180" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz"
+                        android:rotation="180" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz"
+                        android:rotation="180" />
+
+                    <include
+                        layout="@layout/item_home_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:item="@{gridMenus[3]}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz"
+                        android:rotation="180" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz"
+                        android:rotation="180" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz"
+                        android:rotation="180" />
+
+                    <include
+                        layout="@layout/item_home_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:item="@{gridMenus[6]}" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="0.3dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="16dp"
+                    android:background="@drawable/line_home_menu_separator_gradient_center" />
+
+                <View
+                    android:layout_width="0.3dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="16dp"
+                    android:background="@drawable/line_home_menu_separator_gradient_center" />
+
+                <View
+                    android:layout_width="0.3dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="16dp"
+                    android:background="@drawable/line_home_menu_separator_gradient_center" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/item_home_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:item="@{gridMenus[1]}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.9dp"
+                        android:background="@drawable/line_home_menu_separator_solid" />
+
+                    <include
+                        layout="@layout/item_home_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:item="@{gridMenus[4]}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.9dp"
+                        android:background="@drawable/line_home_menu_separator_solid" />
+
+                    <include
+                        layout="@layout/item_home_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:item="@{gridMenus[7]}" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="0.3dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="16dp"
+                    android:background="@drawable/line_home_menu_separator_gradient_center" />
+
+                <View
+                    android:layout_width="0.3dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="16dp"
+                    android:background="@drawable/line_home_menu_separator_gradient_center" />
+
+                <View
+                    android:layout_width="0.3dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="16dp"
+                    android:background="@drawable/line_home_menu_separator_gradient_center" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/item_home_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:item="@{gridMenus[2]}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz" />
+
+                    <include
+                        layout="@layout/item_home_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:item="@{gridMenus[5]}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@drawable/line_home_menu_separator_gradient_horiz" />
+
+                    <include
+                        layout="@layout/item_home_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:item="@{gridMenus[8]}"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </RelativeLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/menu_quick_transfer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:background="?colorSecondary"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?selectableItemBackgroundBorderless">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight="7.5"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_gravity="center_vertical">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quick Transfer"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="?colorOnPrimary"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create your templates here to make transfer quicker"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:textColor="?colorOnPrimary"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_weight="2.5"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_transfer_templates"
+                android:scaleType="fitEnd"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/menu_quick_payment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:background="@color/app_accent"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?selectableItemBackgroundBorderless">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight="7.5"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_gravity="center_vertical">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quick Payment"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="?colorOnPrimary"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paying your bills with templates is faster"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:textColor="?colorOnPrimary"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_weight="2.5"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_payment_templates"
+                android:scaleType="fitEnd"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

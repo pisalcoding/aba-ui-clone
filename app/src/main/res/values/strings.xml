@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ABA Clone</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="accounts">Accounts</string>
+    <string name="cards">Cards</string>
+    <string name="payments">Payments</string>
+    <string name="new_account">New Account</string>
+    <string name="cash_to_atm">Cash to ATM</string>
+    <string name="transfers">Transfers</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="loans">Loans</string>
+    <string name="services">Services</string>
+</resources>
