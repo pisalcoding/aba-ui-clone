@@ -8,7 +8,7 @@ An Android UI clone of ABA Mobile app for education purpose only.
   
 # Screenshots: 
 <div style="text-align:center; width: 100%;">
-  <img src="home.png" width="300" height="auto" align="center"> 
+  <img src="screenshots/home.png" width="300" height="auto" align="center"> 
 </div>
 
 # Disclaimer 
