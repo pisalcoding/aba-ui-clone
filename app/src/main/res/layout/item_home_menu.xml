@@ -2,7 +2,6 @@
 <layout>
 
     <data>
-
         <variable
             name="item"
             type="me.pisal.abaclone.model.entity.MenuModel" />
@@ -32,7 +31,6 @@
                 android:id="@+id/img_thumbnail"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:src="@drawable/ic_accounts_home_menu"
                 menuDrawableRes="@{item.iconResId}"
                 menuIconUrl="@{item.iconUrl}"/>
 

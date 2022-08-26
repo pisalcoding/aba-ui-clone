@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="2dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    android:clickable="true"
+    android:focusable="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lbl_title"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="56dp"
+            android:text="Savings Account with ATM facility" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lyt_account_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_title"
+            android:layout_marginStart="24dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_acc_no"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="000 533 492" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="|" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_category"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Savings" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/bg_tag_filled_secondary"
+                android:gravity="center"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="Default"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lyt_connected_cards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lyt_account_id"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+            <ImageView
+                android:id="@+id/img_union_pay_logo"
+                android:layout_width="32dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_union_pay" />
+            <ImageView
+                android:id="@+id/img_visa_logo"
+                android:layout_width="32dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_visa" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lyt_account_id"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toStartOf="@id/lyt_connected_cards"
+            android:gravity="bottom|end"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_balance"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1,999.12" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_currency"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="USD" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_more"
+            android:layout_width="42dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:alpha="0.7"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_baseline_more_horiz_24"
+            android:tint="?colorOnSurface" />
+        <View
+            android:layout_width="10dp"
+            android:layout_height="100dp"
+            android:background="?colorSecondary" />
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

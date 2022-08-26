@@ -25,4 +25,30 @@
         android:background="?colorPrimaryVariant"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
+    <me.pisal.abaclone.common.custom.blur.BlurLayout
+        android:id="@+id/blur_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <FrameLayout android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:clickable="true"
+        android:visibility="gone"
+        android:focusable="true">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="1.0"
+            android:elevation="4dp"
+            android:indeterminate="false"
+            android:indeterminateTint="?colorSecondary"
+            android:progressTint="?colorSecondary"
+            android:secondaryProgressTint="?colorSecondary" />
+    </FrameLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

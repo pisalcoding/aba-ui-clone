@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:background="?colorPrimaryVariant"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <me.pisal.abaclone.common.custom.pinview.PinAuthView
+            android:id="@+id/pin_auth_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:paddingVertical="16dp"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BlurLayout">
+        <attr name="downscaleFactor" format="float" />
+        <attr name="blurRadius" format="integer" />
+        <attr name="fps" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SingleKeyView">
+        <attr name="skKey" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="SinglePinView">
+        <attr name="spvHasValue" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="PinAuthView">
+        <attr name="pavPinCount" format="integer"/>
+    </declare-styleable>
+</resources>

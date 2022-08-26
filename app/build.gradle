@@ -38,7 +38,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -47,6 +47,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
     implementation 'androidx.databinding:databinding-common:7.2.2'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
     // Retrofit and Network Communication
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
@@ -62,6 +63,10 @@ dependencies {
     implementation "com.github.bumptech.glide:okhttp3-integration:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
     implementation 'com.github.yalantis:ucrop:2.2.8'
+
+    // Koin (Dependency injection)
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-android-ext:3.0.2"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

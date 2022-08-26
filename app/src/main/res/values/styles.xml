@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DialogFragmentStyle">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">?colorPrimary</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowBackground">#88000000</item>
+    </style>
+
+    <style name="DialogFragmentStyle.LightStatusBar">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowBackground">#88000000</item>
+    </style>
+
+    <style name="FullScreenTransparentDialogStyle">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">#88000000</item>
+        <item name="android:statusBarColor">#00ffffff</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="elevation">99dp</item>
+    </style>
+</resources>

@@ -19,4 +19,6 @@
     <string name="scan_qr">Scan QR</string>
     <string name="loans">Loans</string>
     <string name="services">Services</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_pin_to_login">Enter PIN to login</string>
 </resources>

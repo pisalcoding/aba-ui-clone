@@ -11,10 +11,25 @@ import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.module.AppGlideModule
 import com.bumptech.glide.request.RequestOptions
+import me.pisal.abaclone.module.dataModule
 import okhttp3.OkHttpClient
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 import java.io.InputStream
 
 class ABAApplication: Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        initKoin()
+    }
+
+    private fun initKoin() {
+        startKoin {
+            androidContext(this@ABAApplication)
+            modules(listOf(dataModule))
+        }
+    }
 }
 
 @GlideModule

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="hasValue"
+            type="java.lang.Boolean" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view_single_pin"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/bg_circle_filled_white"
+        android:padding="4dp"
+        android:layout_margin="6dp">
+        <View
+            android:id="@+id/inner_dot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_circle_filled_secondary"
+            android:visibility="gone"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

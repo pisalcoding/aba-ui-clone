@@ -1,0 +1,9 @@
+package me.pisal.abaclone.model.dto
+
+import java.io.Serializable
+
+data class ResponseWrapper<T: Serializable>(
+    val data: T?,
+    val code: Int? = null,
+    val message: String? = null,
+): Serializable
