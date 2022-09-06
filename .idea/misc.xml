@@ -742,6 +742,7 @@
         <entry key="app/src/main/res/drawable/2131231952.xml" value="0.283" />
         <entry key="app/src/main/res/drawable/bg_border_bottom.xml" value="0.339" />
         <entry key="app/src/main/res/drawable/bg_brown_gradient_white_line_center.xml" value="0.283" />
+        <entry key="app/src/main/res/drawable/bg_circle_filled_blur_primary.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/bg_circle_filled_half_alpha.xml" value="0.339" />
         <entry key="app/src/main/res/drawable/bg_circle_filled_secondary.xml" value="0.339" />
         <entry key="app/src/main/res/drawable/bg_circle_filled_white.xml" value="0.339" />
@@ -829,12 +830,12 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33697916666666666" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.75" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_accounts.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_accounts.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.5635416666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_pin_auth.xml" value="0.26336041043180847" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.33697916666666666" />
-        <entry key="app/src/main/res/layout/item_account.xml" value="0.677069091796875" />
+        <entry key="app/src/main/res/layout/item_account.xml" value="0.32051282051282054" />
         <entry key="app/src/main/res/layout/item_home_menu.xml" value="0.2859375" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.2869791666666667" />
         <entry key="app/src/main/res/layout/pin_view.xml" value="0.3359375" />

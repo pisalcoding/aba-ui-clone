@@ -35,7 +35,7 @@ fun MainActivity.hideBlur() {
             setRenderEffect(null)
         }
     } else {
-        findViewById<BlurLayout>(R.id.blur_view)?.show()
+        findViewById<BlurLayout>(R.id.blur_view)?.hide()
     }
 }
 

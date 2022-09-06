@@ -17,6 +17,7 @@ class HomeFragment : BaseFragment(sensitive = false, requireAuth = false) {
     override fun onResume() {
         super.onResume()
         withMainActivity {
+            setToolbarTitle("")
             hideBlurIfNotLoading()
             showActionBar()
             setNavigationBackgroundColor(R.color.app_accent)

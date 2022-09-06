@@ -19,9 +19,10 @@ class AccountsAdapter : ListAdapter<Account, AccountsAdapter.ViewHolder>(Account
         holder.bind(getItem(position))
     }
 
-    inner class ViewHolder(binding: ItemAccountBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemAccountBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Account) {
-
+            binding.item = data
+            binding.executePendingBindings()
         }
     }
 }
