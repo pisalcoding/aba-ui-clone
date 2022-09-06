@@ -3,31 +3,34 @@
     <data>
         <import type="me.pisal.abaclone.model.entity.Account"/>
         <import type="android.view.View"/>
-        <variable
-            name="item"
-            type="Account" />
+        <variable name="item" type="Account" />
     </data>
     <com.google.android.material.card.MaterialCardView
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardCornerRadius="6dp"
-        app:cardElevation="2dp"
         android:layout_marginHorizontal="8dp"
         android:layout_marginVertical="4dp"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@{item.color}">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="?colorSurface">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/lbl_title"
                 style="@style/TextAppearance.AppCompat.Subhead"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="56dp"
                 android:ellipsize="end"
@@ -39,8 +42,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lbl_title"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -72,6 +76,7 @@
                     android:background="@drawable/bg_tag_filled_secondary"
                     android:gravity="center"
                     android:paddingHorizontal="8dp"
+                    android:layout_marginVertical="4dp"
                     android:paddingVertical="2dp"
                     android:text="Default"
                     android:textColor="@color/white"
@@ -84,9 +89,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lyt_account_id"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -111,7 +116,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="12dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:layout_toStartOf="@id/lyt_linked_products"
                 android:gravity="bottom|end"
                 android:orientation="horizontal">
@@ -129,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="@{item.currency}" />
+                    android:text="@{item.money.currency}" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.AppCompatImageButton
@@ -141,10 +146,6 @@
                 android:background="?selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_baseline_more_horiz_24"
                 android:tint="?colorOnSurface" />
-            <View
-                android:layout_width="10dp"
-                android:layout_height="100dp"
-                android:background="@{item.color(context)}" />
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

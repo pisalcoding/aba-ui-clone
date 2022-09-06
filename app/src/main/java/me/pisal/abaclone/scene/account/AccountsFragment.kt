@@ -1,21 +1,20 @@
 package me.pisal.abaclone.scene.account
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.github.mikephil.charting.components.Legend
+import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.github.mikephil.charting.utils.MPPointF
+import me.pisal.abaclone.R
 import me.pisal.abaclone.common.TResult
 import me.pisal.abaclone.databinding.FragmentAccountsBinding
 import me.pisal.abaclone.scene.*
-
 
 class AccountsFragment : BaseFragment() {
 
@@ -40,7 +39,7 @@ class AccountsFragment : BaseFragment() {
     override fun onResume() {
         super.onResume()
         withMainActivity {
-            setToolbarTitle("Accounts")
+            setToolbarTitle(getString(R.string.accounts))
             safeRunOnUiThread(100) {
                 setNavigationBackgroundColor(R.color.white)
             }
@@ -48,10 +47,14 @@ class AccountsFragment : BaseFragment() {
     }
 
     private fun setupList() {
+        viewModel.totalInKhr.observe(viewLifecycleOwner, binding::setTotalInKhr)
+        viewModel.totalInUsd.observe(viewLifecycleOwner, binding::setTotalInUsd)
+
         withMainActivity {
             mainViewModel.accounts(requireContext()).observe(viewLifecycleOwner) {
                 binding.rcl.adapter = AccountsAdapter().apply {
                     if (it is TResult.Success && it.data?.data != null) {
+                        viewModel.accountsUpdated(it.data.data)
                         submitList(it.data.data)
                     }
                 }
@@ -71,54 +74,41 @@ class AccountsFragment : BaseFragment() {
             centerText = getString(me.pisal.abaclone.R.string.all_accounts_summary)
             isRotationEnabled = false
             isHighlightPerTapEnabled = false
-        }
+            description = Description().apply { text = "" }
 
-        chart.legend.apply {
-            isEnabled = false
-            verticalAlignment = Legend.LegendVerticalAlignment.TOP
-            horizontalAlignment = Legend.LegendHorizontalAlignment.RIGHT
-            orientation = Legend.LegendOrientation.VERTICAL
-            setDrawInside(false)
-            xEntrySpace = 0f
-            yEntrySpace = 0f
-            yOffset = 0f
+            legend.apply {
+                isEnabled = false
+            }
         }
 
         withMainActivity {
             mainViewModel.accounts(requireContext()).observe(viewLifecycleOwner) {
-                val entries: ArrayList<PieEntry> = ArrayList()
                 when (it) {
                     is TResult.Success -> {
                         val accounts = it.data?.data ?: listOf()
-                        val colors: ArrayList<Int> = ArrayList()
+                        val entryList: ArrayList<PieEntry> = ArrayList()
+                        val colorList: ArrayList<Int> = ArrayList()
+                        val range = 100f
                         for (i in accounts.indices) {
-                            entries.add(
-                                PieEntry(
-                                    (Math.random().toFloat() * 10f + 10f / 5f),
-                                    accounts[i % accounts.size]
-                                )
-                            )
-                            colors.add(ColorTemplate.rgb(accounts[i].colorHex))
+                            val value = ((Math.random().toFloat() * range) + range / 5f)
+                            entryList.add(PieEntry(value, accounts[i % accounts.size]))
+                            colorList.add(ColorTemplate.rgb(accounts[i].colorHex))
                         }
 
-                        val dataSet = PieDataSet(entries, "").apply {
+                        PieDataSet(entryList, "").apply {
                             setDrawIcons(false)
                             sliceSpace = 3f
                             iconsOffset = MPPointF(0f, 10f)
                             selectionShift = 0f
                             valueLineWidth = 8f
                             valueTextSize = 0f
+                            colors = colorList
+                        }.run {
+                            val data = PieData(this)
+                            data.setValueTextSize(0f)
+                            chart.data = data
+                            chart.invalidate()
                         }
-
-                        // add a lot of colors
-                        colors.add(ColorTemplate.getHoloBlue())
-                        dataSet.colors = colors
-
-                        val data = PieData(dataSet)
-                        data.setValueTextSize(0f)
-                        chart.data = data
-
-                        chart.invalidate()
                     }
                     else -> {}
                 }
