@@ -6,4 +6,5 @@ data class ResponseWrapper<T>(
     val data: T?,
     val code: Int? = null,
     val message: String? = null,
+    val success: Boolean = true
 ): Serializable

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="item"
+            type="me.pisal.abaclone.model.entity.MbMenu" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="4dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp"
+        android:stateListAnimator="@animator/push_down">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_thumbnail"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/ic_top_up_menu"
+                android:layout_marginHorizontal="8dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CircleImage"
+                android:background="@drawable/bg_circle_outlined_white"
+                android:padding="1dp"/>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{item.title}"
+                        android:textColor="?colorOnSurface" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.subtitle}"
+                    android:textColor="?colorOnSurface" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

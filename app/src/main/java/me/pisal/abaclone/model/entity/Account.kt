@@ -27,13 +27,22 @@ data class Account(
 
 /**
  * Returns something like: "$ 12,124.00" or "៛ 12,124.00"
+ *
+ * @param withSymbol: whether to show "$|៛" or not. Default true.
  */
-fun List<Account>.sumBalanceByCurrency(currency: Currency): String {
+fun List<Account>.sumBalanceByCurrency(
+    currency: Currency,
+    withSymbol: Boolean = true
+): String {
     return this.filter { it.money.currency == currency.name }
         .sumOf { it.money.amount }
         .toMoney(currency)
         .formatted()
         .run {
-            "${currency.symbol} $this"
+            if (withSymbol) {
+                "${currency.symbol} $this"
+            } else {
+                this
+            }
         }
 }

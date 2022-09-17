@@ -1,4 +1,4 @@
-package me.pisal.abaclone.model.data.account
+package me.pisal.abaclone.data.repo.account
 
 import me.pisal.abaclone.common.TResult
 import me.pisal.abaclone.model.dto.ResponseWrapper
@@ -6,7 +6,7 @@ import me.pisal.abaclone.model.entity.Account
 import me.pisal.abaclone.model.entity.Money
 import java.math.BigDecimal
 
-class AccountRepositoryImpl : AccountRepository {
+class AccountsRepositoryImpl : AccountsRepository {
 
     override suspend fun list(): TResult<ResponseWrapper<List<Account>>> {
         val accounts = listOf(

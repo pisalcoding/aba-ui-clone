@@ -1,3 +1,5 @@
+import org.gradle.execution.BuildConfigurationAction
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -15,6 +17,34 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions "version"
+    productFlavors {
+        dev {
+            dimension "version"
+            applicationIdSuffix ".dev"
+            buildConfigField "String", "URL_SCHEME", '"http"'
+            buildConfigField "String", "DOMAIN_NAME", '"mb.pisal.me"'
+            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
+            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
+        }
+        staging {
+            dimension "version"
+            applicationIdSuffix ".staging"
+            buildConfigField "String", "URL_SCHEME", '"http"'
+            buildConfigField "String", "DOMAIN_NAME", '"app.pisal.me"'
+            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
+            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
+        }
+        pro {
+            dimension "version"
+            applicationIdSuffix ""
+            buildConfigField "String", "URL_SCHEME", '"https"'
+            buildConfigField "String", "DOMAIN_NAME", '"app.pisal.me"'
+            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
+            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
+        }
     }
 
     buildTypes {
@@ -57,6 +87,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+
+    // Security
+    implementation 'com.github.pisalcoding:hybrid-crypto:1.0.0'
 
     // Third-party UI libraries
     implementation 'com.github.pisalcoding:android-passcode-view:1.0.0'

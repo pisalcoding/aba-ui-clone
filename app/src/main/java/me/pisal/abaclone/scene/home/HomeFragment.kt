@@ -57,6 +57,10 @@ class HomeFragment : BaseFragment(sensitive = false, requireAuth = false) {
             menuR1c1.root.setOnClickListener {
                  findNavController().navigate(R.id.fr_accounts)
             }
+
+            menuR1c3.root.setOnClickListener {
+                findNavController().navigate(R.id.paymentsFragment)
+            }
         }
     }
 }

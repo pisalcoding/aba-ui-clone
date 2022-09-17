@@ -1,4 +1,4 @@
-package me.pisal.abaclone.model.data.auth
+package me.pisal.abaclone.data.repo.auth
 
 import me.pisal.abaclone.common.TResult
 import me.pisal.abaclone.model.dto.AuthResponse

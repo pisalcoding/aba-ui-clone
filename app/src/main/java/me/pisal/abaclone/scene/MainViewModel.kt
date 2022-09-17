@@ -5,12 +5,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import me.pisal.abaclone.model.data.account.AccountRepository
+import me.pisal.abaclone.data.repo.account.AccountsRepository
 import org.koin.java.KoinJavaComponent.get
 
 class MainViewModel : ViewModel() {
 
-    private val accountsRepo = get<AccountRepository>(AccountRepository::class.java)
+    private val accountsRepo = get<AccountsRepository>(AccountsRepository::class.java)
 
     private val _authenticated = MutableLiveData<Boolean>().apply { value = false }
     val authenticated: LiveData<Boolean> = _authenticated

@@ -17,4 +17,7 @@
     <fragment android:id="@+id/fr_accounts"
         android:name="me.pisal.abaclone.scene.account.AccountsFragment"
         tools:layout="@layout/fragment_accounts"/>
+    <fragment
+        android:id="@+id/paymentsFragment"
+        android:name="me.pisal.abaclone.scene.payment.PaymentsFragment" />
 </navigation>
