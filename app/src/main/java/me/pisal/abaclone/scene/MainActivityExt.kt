@@ -1,5 +1,6 @@
 package me.pisal.abaclone.scene
 
+import android.content.pm.PackageManager
 import android.graphics.RenderEffect
 import android.graphics.Shader
 import android.os.Build
@@ -8,6 +9,7 @@ import android.os.Looper
 import android.view.View
 import android.widget.TextView
 import androidx.annotation.ColorRes
+import androidx.core.app.ActivityCompat
 import androidx.core.view.isGone
 import me.pisal.abaclone.R
 import me.pisal.abaclone.common.custom.blur.BlurLayout
@@ -89,4 +91,10 @@ fun MainActivity.safeRunOnUiThread(doSth: () -> Unit) {
             t.printStackTrace()
         }
     }
+}
+
+fun MainActivity.isPermissionGrated(permission: Permission): Boolean {
+    val permissionState =
+        ActivityCompat.checkSelfPermission(this, permission.value)
+    return permissionState == PackageManager.PERMISSION_GRANTED
 }

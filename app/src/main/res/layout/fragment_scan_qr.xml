@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <me.pisal.abaclone.thirdparty.mlkit.camera.CameraSourcePreview
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <me.pisal.abaclone.thirdparty.mlkit.camera.GraphicOverlay
+            android:id="@+id/camera_preview_graphic_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/static_overlay_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00ffffff">
+
+        </FrameLayout>
+
+    </me.pisal.abaclone.thirdparty.mlkit.camera.CameraSourcePreview>
+
+<!--    <include-->
+<!--        layout="@layout/top_action_bar_in_live_camera"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="top"/>-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

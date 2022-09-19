@@ -7,9 +7,7 @@ import android.view.ViewGroup
 import me.pisal.abaclone.R
 import me.pisal.abaclone.common.TResult
 import me.pisal.abaclone.databinding.FragmentPaymentsBinding
-import me.pisal.abaclone.scene.BaseFragment
-import me.pisal.abaclone.scene.setToolbarTitle
-import me.pisal.abaclone.scene.withMainActivity
+import me.pisal.abaclone.scene.*
 import org.koin.android.ext.android.inject
 
 class PaymentsFragment : BaseFragment() {
@@ -25,15 +23,18 @@ class PaymentsFragment : BaseFragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupList()
-    }
-
     override fun onResume() {
         super.onResume()
         withMainActivity {
             setToolbarTitle(getString(R.string.payments))
+            safeRunOnUiThread(100) {
+                setNavigationBackgroundColor(R.color.white)
+            }
+            mainViewModel.authenticated.observe(viewLifecycleOwner) {
+                if (it) {
+                    setupList()
+                }
+            }
         }
     }
 

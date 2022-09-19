@@ -54,12 +54,17 @@ class HomeFragment : BaseFragment(sensitive = false, requireAuth = false) {
 
     private fun initListeners() {
         with(binding) {
-            menuR1c1.root.setOnClickListener {
-                 findNavController().navigate(R.id.fr_accounts)
-            }
+            listOf(
+                menuR1c1.root to R.id.accountsFragment,
+                menuR1c3.root to R.id.paymentsFragment,
 
-            menuR1c3.root.setOnClickListener {
-                findNavController().navigate(R.id.paymentsFragment)
+                menuR2c1.root to R.id.newAccountsFragment,
+                menuR2c3.root to R.id.transfersFragment,
+
+                menuR3c1.root to R.id.scanQrFragment,
+                menuR3c2.root to R.id.newLoansFragment,
+            ).forEach { item ->
+                item.first.setOnClickListener { findNavController().navigate(item.second) }
             }
         }
     }

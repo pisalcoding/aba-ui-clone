@@ -8,4 +8,6 @@ interface MenusRepository {
     suspend fun homeMenus(): TResult<ResponseWrapper<List<MbMenu>>>
     suspend fun transferChannelMenus(): TResult<ResponseWrapper<List<MbMenu>>>
     suspend fun paymentChannelMenus(): TResult<ResponseWrapper<List<MbMenu>>>
+    suspend fun newAccountMenus(): TResult<ResponseWrapper<List<MbMenu>>>
+    suspend fun newLoanMenus(): TResult<ResponseWrapper<List<MbMenu>>>
 }

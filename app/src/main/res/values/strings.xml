@@ -22,4 +22,8 @@
     <string name="cancel">Cancel</string>
     <string name="enter_pin_to_login">Enter PIN to login</string>
     <string name="all_accounts_summary">All Accounts Summary</string>
+    <string name="top_up_your_phone_pay_your_bills_like_your_children_s_school_fees_anytime_free_of_charge">Top up your phone, pay your bills like your children\'s school fees, anytime, free of charge.</string>
+    <string name="transfer_money_to_your_fiends_relatives_or_partners_in_couple_of_simple_steps">Transfer money to your fiends, relatives or partners in couple of simple steps.</string>
+    <string name="account_openning">Account Opening</string>
+    <string name="get_loan">Get Loan</string>
 </resources>

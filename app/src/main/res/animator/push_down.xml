@@ -4,11 +4,11 @@
         android:state_enabled="true"
         android:state_pressed="true">
         <set>
-            <objectAnimator
-                android:duration="50"
-                android:propertyName="alpha"
-                android:valueTo="0.90"
-                android:valueType="floatType" />
+<!--            <objectAnimator-->
+<!--                android:duration="50"-->
+<!--                android:propertyName="alpha"-->
+<!--                android:valueTo="0.90"-->
+<!--                android:valueType="floatType" />-->
             <objectAnimator
                 android:duration="50"
                 android:propertyName="scaleX"
@@ -63,11 +63,11 @@
     <item android:state_enabled="true"
         android:state_pressed="false">
         <set>
-            <objectAnimator
-                android:duration="0"
-                android:propertyName="alpha"
-                android:valueTo="0.90"
-                android:valueType="floatType" />
+<!--            <objectAnimator-->
+<!--                android:duration="0"-->
+<!--                android:propertyName="alpha"-->
+<!--                android:valueTo="0.90"-->
+<!--                android:valueType="floatType" />-->
             <objectAnimator
                 android:duration="0"
                 android:propertyName="scaleX"

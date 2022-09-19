@@ -38,10 +38,6 @@ fun Money.formattedWithName(locale: Locale = Locale.US): String {
     return currency + " " + formatted(locale)
 }
 
-fun Money.exchange(exchangeRate: BigDecimal): BigDecimal {
-    return BigDecimal.ZERO
-}
-
 fun BigDecimal.toMoney(currency: Currency): Money {
     return Money(
         amount = this,

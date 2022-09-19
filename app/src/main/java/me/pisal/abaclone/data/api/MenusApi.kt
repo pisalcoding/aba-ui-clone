@@ -15,4 +15,10 @@ interface MenusApi {
 
     @POST("menus/transfer-channels")
     suspend fun transferChannelMenus(): ResponseWrapper<List<MbMenu>>
+
+    @POST("menus/new-accounts")
+    suspend fun newAccountMenus(): ResponseWrapper<List<MbMenu>>
+
+    @POST("menus/loans")
+    suspend fun newLoanMenus(): ResponseWrapper<List<MbMenu>>
 }

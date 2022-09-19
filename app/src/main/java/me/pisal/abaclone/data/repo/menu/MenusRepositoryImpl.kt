@@ -27,4 +27,16 @@ class MenusRepositoryImpl(
             api.paymentChannelMenus()
         }
     }
+
+    override suspend fun newAccountMenus(): TResult<ResponseWrapper<List<MbMenu>>> {
+        return safeApiCall {
+            api.newAccountMenus()
+        }
+    }
+
+    override suspend fun newLoanMenus(): TResult<ResponseWrapper<List<MbMenu>>> {
+        return safeApiCall {
+            api.newLoanMenus()
+        }
+    }
 }

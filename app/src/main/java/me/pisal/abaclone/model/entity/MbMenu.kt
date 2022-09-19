@@ -5,48 +5,48 @@ import java.io.Serializable
 
 data class MbMenu(
 
-	@field:SerializedName("uses_circular_icon")
+	@field:SerializedName("cir")
 	val usesCircularIcon: Int? = null,
 
-	@field:SerializedName("terminal_code")
+	@field:SerializedName("tco")
 	val terminalCode: String? = null,
 
-	@field:SerializedName("icon")
+	@field:SerializedName("ico")
 	val icon: String? = null,
 
-	@field:SerializedName("title")
+	@field:SerializedName("ttl")
 	val title: String? = null,
 
-	@field:SerializedName("version")
+	@field:SerializedName("ver")
 	val version: Int? = null,
 
-	@field:SerializedName("enabled")
+	@field:SerializedName("ena")
 	val enabled: Int? = null,
 
-	@field:SerializedName("highlight_icons")
-	val highlightIcons: List<String>? = null,
+	@field:SerializedName("ics")
+	val highlightIcons: String? = null,
 
-	@field:SerializedName("local_drawable_id")
+	@field:SerializedName("loc")
 	val localDrawableId: String? = null,
 
-	@field:SerializedName("subtitle")
+	@field:SerializedName("stt")
 	val subtitle: String? = null,
 
-	@field:SerializedName("service_code")
+	@field:SerializedName("sco")
 	val serviceCode: String? = null,
 
-	@field:SerializedName("needs_icon_outline")
+	@field:SerializedName("out")
 	val needsIconOutline: Int? = null,
 
 	@field:SerializedName("id")
 	val id: Int? = null,
 
-	@field:SerializedName("requires_auth")
+	@field:SerializedName("aut")
 	val requiresAuth: Int? = null,
 
-	@field:SerializedName("sub_button_text")
+	@field:SerializedName("sbt")
 	val subButtonText: String? = null,
 
-	@field:SerializedName("status")
+	@field:SerializedName("sta")
 	val status: Int? = null
 ): Serializable

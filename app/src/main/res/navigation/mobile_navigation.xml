@@ -10,14 +10,28 @@
         android:name="me.pisal.abaclone.scene.home.HomeFragment"
         tools:layout="@layout/fragment_home" />
 
-    <fragment android:id="@+id/fr_pin_auth"
+    <fragment android:id="@+id/pinAuthFragment"
         android:name="me.pisal.abaclone.scene.pin.auth.PinAuthFragment"
         tools:layout="@layout/fragment_pin_auth"/>
 
-    <fragment android:id="@+id/fr_accounts"
+    <fragment android:id="@+id/accountsFragment"
         android:name="me.pisal.abaclone.scene.account.AccountsFragment"
         tools:layout="@layout/fragment_accounts"/>
     <fragment
         android:id="@+id/paymentsFragment"
         android:name="me.pisal.abaclone.scene.payment.PaymentsFragment" />
+    <fragment
+        android:id="@+id/transfersFragment"
+        android:name="me.pisal.abaclone.scene.transfer.TransfersFragment" />
+    <fragment
+        android:id="@+id/newAccountsFragment"
+        android:name="me.pisal.abaclone.scene.newaccount.NewAccountsFragment" />
+    <fragment
+        android:id="@+id/newLoansFragment"
+        android:name="me.pisal.abaclone.scene.loan.NewLoansFragment" />
+    <fragment
+        android:id="@+id/scanQrFragment"
+        android:name="me.pisal.abaclone.scene.scanqr.ScanQrFragment"
+        />
+
 </navigation>

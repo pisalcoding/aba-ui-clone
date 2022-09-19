@@ -1,4 +1,4 @@
-package me.pisal.abaclone.scene.transfer
+package me.pisal.abaclone.scene.newaccount
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,28 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import me.pisal.abaclone.R
 import me.pisal.abaclone.common.TResult
-import me.pisal.abaclone.databinding.FragmentTransfersBinding
+import me.pisal.abaclone.databinding.FragmentNewAccountsBinding
 import me.pisal.abaclone.scene.*
-import me.pisal.abaclone.scene.payment.TrxChannelAdapter
 import org.koin.android.ext.android.inject
 
-class TransfersFragment : BaseFragment() {
-    private val viewModel by inject<TransfersViewModel>()
-    private lateinit var binding: FragmentTransfersBinding
+class NewAccountsFragment : BaseFragment() {
+    private val viewModel by inject<NewAccountsViewModel>()
+    private lateinit var binding: FragmentNewAccountsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentTransfersBinding.inflate(inflater, container, false)
+        binding = FragmentNewAccountsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
         withMainActivity {
-            setToolbarTitle(getString(R.string.transfers))
+            setToolbarTitle(getString(R.string.account_openning))
             safeRunOnUiThread(100) {
                 setNavigationBackgroundColor(R.color.white)
             }
@@ -40,7 +39,7 @@ class TransfersFragment : BaseFragment() {
     }
 
     private fun setupList() {
-        binding.rcl.adapter = TrxChannelAdapter().apply {
+        binding.rcl.adapter = NewAccountAdapter().apply {
             viewModel.menus().observe(viewLifecycleOwner) {
                 when (it) {
                     is TResult.Success -> {

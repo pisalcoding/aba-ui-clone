@@ -30,18 +30,19 @@ class AccountsFragment : BaseFragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupList()
-        setupChart()
-    }
-
     override fun onResume() {
         super.onResume()
         withMainActivity {
             setToolbarTitle(getString(R.string.accounts))
             safeRunOnUiThread(100) {
                 setNavigationBackgroundColor(R.color.white)
+            }
+
+            mainViewModel.authenticated.observe(viewLifecycleOwner) {
+                if (it) {
+                    setupList()
+                    setupChart()
+                }
             }
         }
     }

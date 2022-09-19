@@ -1,14 +1,14 @@
-package me.pisal.abaclone.scene.transfer
+package me.pisal.abaclone.scene.newaccount
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import me.pisal.abaclone.data.repo.menu.MenusRepository
 
-class TransfersViewModel(
+class NewAccountsViewModel(
     private val menusRepository: MenusRepository,
 ) : ViewModel() {
 
     fun menus() = liveData {
-        emit(menusRepository.transferChannelMenus())
+        emit(menusRepository.newAccountMenus())
     }
 }
