@@ -17,7 +17,7 @@
 package me.pisal.abaclone.thirdparty.mlkit.barcodedetection
 
 import android.graphics.Bitmap
-import com.google.mlkit.md.camera.FrameMetadata
+import me.pisal.abaclone.thirdparty.mlkit.camera.FrameMetadata
 import java.nio.ByteBuffer
 
 interface InputInfo {

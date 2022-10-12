@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.mlkit.md.camera
+package me.pisal.abaclone.thirdparty.mlkit.camera
 
 import android.hardware.Camera
 import com.google.android.gms.common.images.Size

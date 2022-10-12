@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.mlkit.md.camera
+package me.pisal.abaclone.thirdparty.mlkit.camera
 
 import android.content.Context
 import android.graphics.ImageFormat
@@ -27,10 +27,9 @@ import android.view.SurfaceHolder
 import android.view.WindowManager
 import com.google.android.gms.common.images.Size
 import me.pisal.abaclone.thirdparty.mlkit.barcodedetection.Utils
-import me.pisal.abaclone.thirdparty.mlkit.camera.GraphicOverlay
 import java.io.IOException
 import java.nio.ByteBuffer
-import java.util.IdentityHashMap
+import java.util.*
 import kotlin.math.abs
 import kotlin.math.ceil
 
@@ -288,7 +287,7 @@ class CameraSource(private val graphicOverlay: GraphicOverlay) {
         // should guarantee that there will be an array to work with.
         val byteArray = ByteArray(bufferSize)
         val byteBuffer = ByteBuffer.wrap(byteArray)
-        check(!(!byteBuffer.hasArray() || !byteBuffer.array()!!.contentEquals(byteArray))) {
+        check(!(!byteBuffer.hasArray() || !byteBuffer.array().contentEquals(byteArray))) {
             // This should never happen. If it does, then we wouldn't be passing the preview content to
             // the underlying detector later.
             "Failed to create valid buffer for camera source."
@@ -309,7 +308,7 @@ class CameraSource(private val graphicOverlay: GraphicOverlay) {
      * associated processing is done for the previous frame, detection on the mostly recently received
      * frame will immediately start on the same thread.
      */
-    private inner class FrameProcessingRunnable internal constructor() : Runnable {
+    private inner class FrameProcessingRunnable : Runnable {
 
         // This lock guards all of the member variables below.
         private val lock = Object()
@@ -330,7 +329,7 @@ class CameraSource(private val graphicOverlay: GraphicOverlay) {
          * Sets the frame data received from the camera. This adds the previous unused frame buffer (if
          * present) back to the camera, and keeps a pending reference to the frame data for future use.
          */
-        internal fun setNextFrame(data: ByteArray, camera: Camera) {
+        fun setNextFrame(data: ByteArray, camera: Camera) {
             synchronized(lock) {
                 pendingFrameData?.let {
                     camera.addCallbackBuffer(it.array())

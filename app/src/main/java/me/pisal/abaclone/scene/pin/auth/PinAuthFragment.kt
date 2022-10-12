@@ -5,31 +5,28 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import me.pisal.abaclone.R
 import me.pisal.abaclone.common.TResult
 import me.pisal.abaclone.databinding.FragmentPinAuthBinding
-import me.pisal.abaclone.scene.hideBlurIfNotLoading
-import me.pisal.abaclone.scene.setNavigationBackgroundColor
-import me.pisal.abaclone.scene.showBlur
-import me.pisal.abaclone.scene.withMainActivity
+import me.pisal.abaclone.scene.*
 
-class PinAuthFragment : DialogFragment(
-) {
+class PinAuthFragment : Fragment() {
 
     private val viewModel by viewModels<PinAuthViewModel>()
     private lateinit var binding: FragmentPinAuthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NO_FRAME, R.style.FullScreenTransparentDialogStyle)
+        // setStyle(STYLE_NO_FRAME, R.style.FullScreenTransparentDialogStyle)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentPinAuthBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -38,11 +35,13 @@ class PinAuthFragment : DialogFragment(
     override fun onResume() {
         super.onResume()
         withMainActivity {
-            showBlur()
+            //            showBlur()
+            hideActionBar()
             setNavigationBackgroundColor(R.color.app_primary)
             mainViewModel.authenticated.observe(viewLifecycleOwner) {
                 if (it) {
-                    dismiss()
+                    findNavController().navigateUp()
+                    // dismiss()
                 }
             }
         }
@@ -59,7 +58,7 @@ class PinAuthFragment : DialogFragment(
     private fun initListeners() {
         with(binding) {
             btnCancel.setOnClickListener {
-                dismiss()
+                findNavController().navigateUp()
             }
 
             pinAuthView.onFilled = { pin ->

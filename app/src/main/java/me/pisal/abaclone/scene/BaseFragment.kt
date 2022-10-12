@@ -2,6 +2,8 @@ package me.pisal.abaclone.scene
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import me.pisal.abaclone.R
 import me.pisal.abaclone.scene.pin.auth.PinAuthFragment
 
 
@@ -14,7 +16,7 @@ open class BaseFragment(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (requireAuth) {
-            PinAuthFragment().show(childFragmentManager, "PinAuthFragment")
+            findNavController().navigate(R.id.toPinAuth)
         }
     }
 }

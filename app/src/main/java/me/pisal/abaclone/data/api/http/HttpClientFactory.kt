@@ -15,10 +15,10 @@ class HttpClientFactory private constructor() {
     }
 
     val baseApiUrl by lazy {
-        BuildConfig.URL_SCHEME + "://" + BuildConfig.DOMAIN_NAME + BuildConfig.BASE_API_PATH
+        baseUrl + BuildConfig.BASE_API_PATH
     }
 
-    fun sslPinner(): CertificatePinner{
+    fun sslPinner(): CertificatePinner {
         return CertificatePinner.Builder().apply {
             val hashes = BuildConfig.SERVER_HASHES.split(",")
             hashes.forEach { add(BuildConfig.DOMAIN_NAME, it) }
@@ -38,9 +38,15 @@ class HttpClientFactory private constructor() {
     fun httpClient(
         certificatePinner: CertificatePinner,
         logger: HttpLoggingInterceptor,
+        encryptionInterceptor: EncryptionInterceptor,
     ): OkHttpClient {
         return OkHttpClient.Builder().apply {
-//            certificatePinner(certificatePinner)
+            if (BuildConfig.PIN_SSL) {
+                certificatePinner(certificatePinner)
+            }
+            if (BuildConfig.ENCRYPT_DATA_TRANSPORT) {
+                addInterceptor(encryptionInterceptor)
+            }
             addInterceptor(logger)
         }.build()
     }
@@ -53,13 +59,6 @@ class HttpClientFactory private constructor() {
             .client(httpClient)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create()).build()
-    }
-
-    fun <T> getService(
-        retrofit: Retrofit,
-        serviceClass: Class<T>,
-    ): T {
-        return retrofit.create(serviceClass)
     }
 
     companion object {

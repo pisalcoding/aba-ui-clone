@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.google.common.base.Objects
-import com.google.mlkit.md.camera.CameraSource
+import me.pisal.abaclone.thirdparty.mlkit.camera.CameraSource
 import me.pisal.abaclone.R
 import me.pisal.abaclone.databinding.FragmentScanQrBinding
 import me.pisal.abaclone.scene.*

@@ -1,52 +1,53 @@
 package me.pisal.abaclone.model.entity
 
 import com.google.gson.annotations.SerializedName
+import me.pisal.abaclone.model.dao.IMbMenu
 import java.io.Serializable
 
 data class MbMenu(
 
 	@field:SerializedName("cir")
-	val usesCircularIcon: Int? = null,
+	override var usesCircularIcon: Int? = null,
 
 	@field:SerializedName("tco")
-	val terminalCode: String? = null,
+	override var terminalCode: String? = null,
 
 	@field:SerializedName("ico")
-	val icon: String? = null,
+	override var icon: String? = null,
 
 	@field:SerializedName("ttl")
-	val title: String? = null,
+	override var title: String? = null,
 
 	@field:SerializedName("ver")
-	val version: Int? = null,
+	override var version: Int? = null,
 
 	@field:SerializedName("ena")
-	val enabled: Int? = null,
+	override var enabled: Int? = null,
 
 	@field:SerializedName("ics")
-	val highlightIcons: String? = null,
+	override var highlightIcons: String? = null,
 
 	@field:SerializedName("loc")
-	val localDrawableId: String? = null,
+	override var localDrawableId: String? = null,
 
 	@field:SerializedName("stt")
-	val subtitle: String? = null,
+	override var subtitle: String? = null,
 
 	@field:SerializedName("sco")
-	val serviceCode: String? = null,
+	override var serviceCode: String? = null,
 
 	@field:SerializedName("out")
-	val needsIconOutline: Int? = null,
+	override var needsIconOutline: Int? = null,
 
 	@field:SerializedName("id")
-	val id: Int? = null,
+	override var id: Int? = null,
 
 	@field:SerializedName("aut")
-	val requiresAuth: Int? = null,
+	override var requiresAuth: Int? = null,
 
 	@field:SerializedName("sbt")
-	val subButtonText: String? = null,
+	override var subButtonText: String? = null,
 
 	@field:SerializedName("sta")
-	val status: Int? = null
-): Serializable
+	override var status: Int? = null
+): Serializable, IMbMenu

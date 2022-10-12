@@ -26,4 +26,9 @@
     <string name="transfer_money_to_your_fiends_relatives_or_partners_in_couple_of_simple_steps">Transfer money to your fiends, relatives or partners in couple of simple steps.</string>
     <string name="account_openning">Account Opening</string>
     <string name="get_loan">Get Loan</string>
+    <string name="quick_transfer">Quick Transfer</string>
+    <string name="create_your_templates_here_to_make_transfer_quicker">Create your templates here to make transfer quicker</string>
+    <string name="quick_payment">Quick Payment</string>
+    <string name="paying_your_bills_with_templates_is_faster">Paying your bills with templates is faster</string>
+    <string name="save_here_aba_accounts_of_your_relatives_friends_or_business_partners_to_whom_you_transfer_funds_frequently">Save here ABA accounts of your relatives, friends or business partners, to whom you transfer funds frequently.</string>
 </resources>

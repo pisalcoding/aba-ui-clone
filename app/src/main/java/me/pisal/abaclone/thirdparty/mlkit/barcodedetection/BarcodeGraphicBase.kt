@@ -57,13 +57,12 @@ internal abstract class BarcodeGraphicBase(overlay: GraphicOverlay) : Graphic(ov
             val overlayWidth = overlay.width.toFloat()
             val overlayHeight = overlay.height.toFloat()
             val boxWidth = overlayWidth * 80 / 100
-            val boxHeight = boxWidth // overlayHeight * 80 / 100
             val cx = overlayWidth / 2
             val cy = overlayHeight / 2
             return RectF(cx - boxWidth / 2,
-                cy - boxHeight / 2,
+                cy - boxWidth / 2,
                 cx + boxWidth / 2,
-                cy + boxHeight / 2)
+                cy + boxWidth / 2)
         }
 
     override fun draw(canvas: Canvas) {

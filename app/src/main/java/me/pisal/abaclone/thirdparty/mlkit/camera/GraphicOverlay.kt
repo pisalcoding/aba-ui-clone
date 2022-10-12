@@ -22,7 +22,6 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
-import com.google.mlkit.md.camera.CameraSource
 import me.pisal.abaclone.thirdparty.mlkit.barcodedetection.Utils
 import me.pisal.abaclone.thirdparty.mlkit.camera.GraphicOverlay.Graphic
 

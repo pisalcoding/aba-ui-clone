@@ -840,6 +840,7 @@
         <entry key="app/src/main/res/layout/fragment_new_loans.xml" value="0.4625908507909363" />
         <entry key="app/src/main/res/layout/fragment_payments.xml" value="0.27661393758016245" />
         <entry key="app/src/main/res/layout/fragment_pin_auth.xml" value="0.26336041043180847" />
+        <entry key="app/src/main/res/layout/fragment_quick_transfers.xml" value="0.36169303120991875" />
         <entry key="app/src/main/res/layout/fragment_scan_qr.xml" value="0.4343736639589568" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.33697916666666666" />
         <entry key="app/src/main/res/layout/fragment_transfers.xml" value="0.44976485677640016" />
@@ -847,6 +848,7 @@
         <entry key="app/src/main/res/layout/item_home_menu.xml" value="0.2859375" />
         <entry key="app/src/main/res/layout/item_new_account_menu.xml" value="0.4352287302265926" />
         <entry key="app/src/main/res/layout/item_new_loan_menu.xml" value="0.4625908507909363" />
+        <entry key="app/src/main/res/layout/item_template.xml" value="0.36169303120991875" />
         <entry key="app/src/main/res/layout/item_trx_channel_menu.xml" value="0.27661393758016245" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.2869791666666667" />
         <entry key="app/src/main/res/layout/pin_view.xml" value="0.3359375" />

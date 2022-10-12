@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package com.google.mlkit.md.camera
+package me.pisal.abaclone.thirdparty.mlkit.camera
 
-import me.pisal.abaclone.thirdparty.mlkit.camera.GraphicOverlay
 import java.nio.ByteBuffer
 
 /** An interface to process the input camera frame and perform detection on it.  */

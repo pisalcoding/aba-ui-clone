@@ -22,7 +22,7 @@ import android.graphics.Paint.Style
 import android.graphics.RectF
 import androidx.core.content.ContextCompat
 import me.pisal.abaclone.thirdparty.mlkit.camera.GraphicOverlay
-import com.google.mlkit.md.camera.CameraReticleAnimator
+import me.pisal.abaclone.thirdparty.mlkit.camera.CameraReticleAnimator
 import me.pisal.abaclone.R
 
 /**

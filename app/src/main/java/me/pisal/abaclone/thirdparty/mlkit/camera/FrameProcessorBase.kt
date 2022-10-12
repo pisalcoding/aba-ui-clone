@@ -22,8 +22,6 @@ import androidx.annotation.GuardedBy
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.TaskExecutors
-import com.google.mlkit.md.camera.FrameMetadata
-import com.google.mlkit.md.camera.FrameProcessor
 import com.google.mlkit.vision.common.InputImage
 import me.pisal.abaclone.thirdparty.mlkit.barcodedetection.CameraInputInfo
 import me.pisal.abaclone.thirdparty.mlkit.barcodedetection.InputInfo

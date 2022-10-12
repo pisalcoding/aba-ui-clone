@@ -1,57 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/menu_quick_payment"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            android:orientation="horizontal"
-            android:background="@color/app_accent">
+            android:background="@color/app_secondary"
+            android:orientation="horizontal">
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="0dp"
-                android:layout_weight="7.5"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="7.5"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_gravity="center_vertical">
+                android:padding="16dp">
+
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/payments"
                     style="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="?colorOnPrimary"/>
-                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/top_up_your_phone_pay_your_bills_like_your_children_s_school_fees_anytime_free_of_charge"
+                    android:text="@string/quick_transfer"
+                    android:textColor="?colorOnPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
                     style="@style/TextAppearance.Material3.BodySmall"
-                    android:textColor="?colorOnPrimary"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save_here_aba_accounts_of_your_relatives_friends_or_business_partners_to_whom_you_transfer_funds_frequently"
+                    android:textColor="?colorOnPrimary" />
             </androidx.appcompat.widget.LinearLayoutCompat>
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="0dp"
-                android:layout_weight="2.5"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_payment_templates"
-                android:scaleType="fitEnd"/>
+                android:layout_weight="2.5"
+                android:scaleType="fitEnd"
+                android:src="@drawable/ic_transfer_templates" />
         </androidx.appcompat.widget.LinearLayoutCompat>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="vertical"
-            tools:listitem="@layout/item_trx_channel_menu"
             android:layout_marginTop="6dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
             android:overScrollMode="never"
-            android:layout_marginBottom="32dp"/>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_template" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

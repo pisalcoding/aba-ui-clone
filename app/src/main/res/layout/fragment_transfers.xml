@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/menu_quick_payment"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:orientation="horizontal"
-        android:background="@color/app_secondary">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="0dp"
-            android:layout_weight="7.5"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_gravity="center_vertical">
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+            android:id="@+id/menu_quick_payment"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/app_secondary"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/transfers"
-                style="@style/TextAppearance.AppCompat.Title"
-                android:textColor="?colorOnPrimary"/>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/transfer_money_to_your_fiends_relatives_or_partners_in_couple_of_simple_steps"
-                style="@style/TextAppearance.Material3.BodySmall"
-                android:textColor="?colorOnPrimary"/>
+                android:layout_gravity="center_vertical"
+                android:layout_weight="7.5"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/transfers"
+                    android:textColor="?colorOnPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/transfer_money_to_your_fiends_relatives_or_partners_in_couple_of_simple_steps"
+                    android:textColor="?colorOnPrimary" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:scaleType="fitEnd"
+                android:src="@drawable/ic_transfer_templates" />
         </androidx.appcompat.widget.LinearLayoutCompat>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="0dp"
-            android:layout_weight="2.5"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_transfer_templates"
-            android:scaleType="fitEnd"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical"
-        tools:listitem="@layout/item_trx_channel_menu"
-        android:paddingTop="6dp"/>
-</LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_trx_channel_menu" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

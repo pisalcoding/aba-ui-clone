@@ -6,7 +6,7 @@ import me.pisal.abaclone.data.api.helpers.safeApiCall
 import me.pisal.abaclone.model.dto.ResponseWrapper
 import me.pisal.abaclone.model.entity.MbMenu
 
-class MenusRepositoryImpl(
+class RemoteMenusRepository(
     private val api: MenusApi,
 ) : MenusRepository {
 
@@ -17,9 +17,10 @@ class MenusRepositoryImpl(
     }
 
     override suspend fun transferChannelMenus(): TResult<ResponseWrapper<List<MbMenu>>> {
-        return safeApiCall {
+        val result = safeApiCall {
             api.transferChannelMenus()
         }
+        return result
     }
 
     override suspend fun paymentChannelMenus(): TResult<ResponseWrapper<List<MbMenu>>> {

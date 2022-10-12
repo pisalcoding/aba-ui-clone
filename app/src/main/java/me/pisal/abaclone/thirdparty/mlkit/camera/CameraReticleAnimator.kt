@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.mlkit.md.camera
+package me.pisal.abaclone.thirdparty.mlkit.camera
 
 import android.animation.AnimatorSet
 import android.animation.ValueAnimator
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
-import me.pisal.abaclone.thirdparty.mlkit.camera.GraphicOverlay
 
 /** Custom animator for the object or barcode reticle in live camera.  */
 class CameraReticleAnimator(graphicOverlay: GraphicOverlay) {
@@ -39,20 +38,23 @@ class CameraReticleAnimator(graphicOverlay: GraphicOverlay) {
     private val animatorSet: AnimatorSet
 
     init {
-        val rippleFadeInAnimator = ValueAnimator.ofFloat(0f, 1f).setDuration(DURATION_RIPPLE_FADE_IN_MS)
+        val rippleFadeInAnimator = ValueAnimator.ofFloat(0f, 1f).setDuration(
+            DURATION_RIPPLE_FADE_IN_MS)
         rippleFadeInAnimator.addUpdateListener { animation ->
             rippleAlphaScale = animation.animatedValue as Float
             graphicOverlay.postInvalidate()
         }
 
-        val rippleFadeOutAnimator = ValueAnimator.ofFloat(1f, 0f).setDuration(DURATION_RIPPLE_FADE_OUT_MS)
+        val rippleFadeOutAnimator = ValueAnimator.ofFloat(1f, 0f).setDuration(
+            DURATION_RIPPLE_FADE_OUT_MS)
         rippleFadeOutAnimator.startDelay = START_DELAY_RIPPLE_FADE_OUT_MS
         rippleFadeOutAnimator.addUpdateListener { animation ->
             rippleAlphaScale = animation.animatedValue as Float
             graphicOverlay.postInvalidate()
         }
 
-        val rippleExpandAnimator = ValueAnimator.ofFloat(0f, 1f).setDuration(DURATION_RIPPLE_EXPAND_MS)
+        val rippleExpandAnimator = ValueAnimator.ofFloat(0f, 1f).setDuration(
+            DURATION_RIPPLE_EXPAND_MS)
         rippleExpandAnimator.startDelay = START_DELAY_RIPPLE_EXPAND_MS
         rippleExpandAnimator.interpolator = FastOutSlowInInterpolator()
         rippleExpandAnimator.addUpdateListener { animation ->
@@ -69,7 +71,8 @@ class CameraReticleAnimator(graphicOverlay: GraphicOverlay) {
             graphicOverlay.postInvalidate()
         }
 
-        val fakeAnimatorForRestartDelay = ValueAnimator.ofInt(0, 0).setDuration(DURATION_RESTART_DORMANCY_MS)
+        val fakeAnimatorForRestartDelay = ValueAnimator.ofInt(0, 0).setDuration(
+            DURATION_RESTART_DORMANCY_MS)
         fakeAnimatorForRestartDelay.startDelay = START_DELAY_RESTART_DORMANCY_MS
         animatorSet = AnimatorSet()
         animatorSet.playTogether(

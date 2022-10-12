@@ -250,13 +250,13 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quick Transfer"
+                    android:text="@string/quick_transfer"
                     style="@style/TextAppearance.AppCompat.Title"
                     android:textColor="?colorOnPrimary"/>
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Create your templates here to make transfer quicker"
+                    android:text="@string/create_your_templates_here_to_make_transfer_quicker"
                     style="@style/TextAppearance.Material3.BodySmall"
                     android:textColor="?colorOnPrimary"/>
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -287,13 +287,13 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quick Payment"
+                    android:text="@string/quick_payment"
                     style="@style/TextAppearance.AppCompat.Title"
                     android:textColor="?colorOnPrimary"/>
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Paying your bills with templates is faster"
+                    android:text="@string/paying_your_bills_with_templates_is_faster"
                     style="@style/TextAppearance.Material3.BodySmall"
                     android:textColor="?colorOnPrimary"/>
             </androidx.appcompat.widget.LinearLayoutCompat>

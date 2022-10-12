@@ -23,7 +23,6 @@ import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.widget.FrameLayout
 import com.google.android.gms.common.images.Size
-import com.google.mlkit.md.camera.CameraSource
 import me.pisal.abaclone.R
 import me.pisal.abaclone.thirdparty.mlkit.barcodedetection.Utils
 import java.io.IOException
@@ -89,7 +88,7 @@ class CameraSourcePreview(context: Context, attrs: AttributeSet) : FrameLayout(c
             } else {
                 size.width.toFloat() / size.height
             }
-        } ?: layoutWidth.toFloat() / layoutHeight.toFloat()
+        } ?: (layoutWidth.toFloat() / layoutHeight.toFloat())
 
         // Match the width of the child view to its parent.
         val childHeight = (layoutWidth / previewSizeRatio).toInt()

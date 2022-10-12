@@ -38,7 +38,7 @@ import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.exifinterface.media.ExifInterface
-import com.google.mlkit.md.camera.CameraSizePair
+import me.pisal.abaclone.thirdparty.mlkit.camera.CameraSizePair
 import com.google.mlkit.vision.common.InputImage
 import java.io.ByteArrayOutputStream
 import java.io.IOException

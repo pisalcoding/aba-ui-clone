@@ -11,8 +11,7 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment android:id="@+id/pinAuthFragment"
-        android:name="me.pisal.abaclone.scene.pin.auth.PinAuthFragment"
-        tools:layout="@layout/fragment_pin_auth"/>
+        android:name="me.pisal.abaclone.scene.pin.auth.PinAuthFragment" />
 
     <fragment android:id="@+id/accountsFragment"
         android:name="me.pisal.abaclone.scene.account.AccountsFragment"
@@ -34,4 +33,5 @@
         android:name="me.pisal.abaclone.scene.scanqr.ScanQrFragment"
         />
 
+    <action app:destination="@id/pinAuthFragment" android:id="@+id/toPinAuth" app:launchSingleTop="true" app:popUpToInclusive="true"/>
 </navigation>
