@@ -4,7 +4,7 @@
     <data>
         <variable
             name="item"
-            type="me.pisal.abaclone.model.entity.MbMenu" />
+            type="me.pisal.abaclone.model.dto.MbMenuDto" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

@@ -8,8 +8,8 @@ import me.pisal.abaclone.data.repo.menu.MenusRepository
 import me.pisal.abaclone.data.repo.menu.RemoteMenusRepository
 import org.koin.dsl.module
 
-val dataModule = module {
-    single<AuthRepository> { AuthRepositoryImpl() }
-    single<AccountsRepository> { AccountsRepositoryImpl() }
-    single<MenusRepository> { RemoteMenusRepository(get()) }
+val RemoteDataModule = module {
+    single<AuthRepository>(qualifier = RepoQualifier.Remote) { AuthRepositoryImpl() }
+    single<AccountsRepository>(qualifier = RepoQualifier.Remote) { AccountsRepositoryImpl() }
+    single<MenusRepository>(qualifier = RepoQualifier.Remote) { RemoteMenusRepository(get()) }
 }

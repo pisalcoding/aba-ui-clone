@@ -35,7 +35,7 @@ android {
             dimension "version"
             applicationIdSuffix ".dev"
             buildConfigField "String", "URL_SCHEME", '"http"'
-            buildConfigField "String", "DOMAIN_NAME", '"172.20.10.5"'
+            buildConfigField "String", "DOMAIN_NAME", '"172.16.203.58"'
             buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
             buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
             buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'false'

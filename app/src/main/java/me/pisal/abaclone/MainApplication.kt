@@ -11,8 +11,12 @@ import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.module.AppGlideModule
 import com.bumptech.glide.request.RequestOptions
+import io.realm.kotlin.Realm
+import io.realm.kotlin.RealmConfiguration
+import me.pisal.abaclone.model.dao.MbMenuDao
 import me.pisal.abaclone.module.apiModule
-import me.pisal.abaclone.module.dataModule
+import me.pisal.abaclone.module.RemoteDataModule
+import me.pisal.abaclone.module.persistenceModule
 import me.pisal.abaclone.module.viewModelModule
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
@@ -24,13 +28,20 @@ class ABAApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         initKoin()
+        initRealm()
     }
 
     private fun initKoin() {
         startKoin {
             androidContext(this@ABAApplication)
-            modules(listOf(apiModule, dataModule, viewModelModule))
+            modules(listOf(apiModule, RemoteDataModule, persistenceModule, viewModelModule))
         }
+    }
+
+    private fun initRealm() {
+        val config = RealmConfiguration.Builder(schema = setOf(MbMenuDao::class))
+            .build()
+        val realm: Realm = Realm.open(config)
     }
 }
 

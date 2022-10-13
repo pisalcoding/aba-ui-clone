@@ -19,4 +19,11 @@ open class BaseFragment(
             findNavController().navigate(R.id.toPinAuth)
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        withMainActivity {
+            showActionBar()
+        }
+    }
 }

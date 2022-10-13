@@ -58,7 +58,7 @@ class PinAuthFragment : Fragment() {
     private fun initListeners() {
         with(binding) {
             btnCancel.setOnClickListener {
-                findNavController().navigateUp()
+                findNavController().popBackStack()
             }
 
             pinAuthView.onFilled = { pin ->
