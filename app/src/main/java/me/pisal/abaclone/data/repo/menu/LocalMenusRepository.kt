@@ -16,7 +16,7 @@ class LocalMenusRepository(
         return safeRealmCall {
             realm.query(MbMenuDao::class, "type = $0", menuType.name)
                 .find()
-                .map { MbMenuDto.fromDao(it) }
+                .map { it.toDto() }
                 .run {
                     ResponseWrapper(this)
                 }

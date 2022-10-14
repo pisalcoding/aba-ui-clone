@@ -5,6 +5,8 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.withContext
 import me.pisal.abaclone.common.TResult
 
+const val realmSchemaVersion: Long = 2
+
 suspend fun <T> safeRealmCall(
     dispatcher: CoroutineDispatcher = IO,
     transaction: suspend () -> T,
@@ -18,3 +20,8 @@ suspend fun <T> safeRealmCall(
         }
     }
 }
+
+suspend fun persist() {
+
+}
+
