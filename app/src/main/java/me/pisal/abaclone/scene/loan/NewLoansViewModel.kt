@@ -8,7 +8,15 @@ class NewLoansViewModel(
     private val menusRepository: MenusRepository,
 ) : ViewModel() {
 
-    fun menus() = liveData {
-        emit(menusRepository.newLoanMenus())
+    fun menus(useCache: Boolean) = liveData {
+        /**
+         * Return the cached data first
+         */
+        emit(menusRepository.newLoanMenus(useCache))
+
+        /**
+         * Then fetch in the background to update cache
+         */
+        menusRepository.newLoanMenus(false)
     }
 }

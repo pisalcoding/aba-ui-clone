@@ -40,7 +40,7 @@ class PaymentsFragment : BaseFragment() {
             mainViewModel.authenticated
                 .observe(viewLifecycleOwner) { authenticated ->
                     if (authenticated) {
-                        viewModel.menus().observe(viewLifecycleOwner) {
+                        viewModel.menus(true).observe(viewLifecycleOwner) {
                             when (it) {
                                 is TResult.Success -> {
                                     it.data?.data?.let(adapter::submitList)
