@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import me.pisal.abaclone.databinding.ItemTrxChannelMenuBinding
-import me.pisal.abaclone.model.entity.MbMenu
+import me.pisal.abaclone.model.dto.MbMenuDto
 
 class TrxChannelAdapter
-    : ListAdapter<MbMenu, TrxChannelAdapter.TrxChannelViewHolder>(MbMenuDiff) {
+    : ListAdapter<MbMenuDto, TrxChannelAdapter.TrxChannelViewHolder>(MbMenuDiff) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrxChannelViewHolder {
         return ItemTrxChannelMenuBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -26,19 +26,19 @@ class TrxChannelAdapter
 
     inner class TrxChannelViewHolder(private val binding: ItemTrxChannelMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: MbMenu) {
+        fun bind(data: MbMenuDto) {
             binding.item = data
             binding.executePendingBindings()
         }
     }
 }
 
-object MbMenuDiff : DiffUtil.ItemCallback<MbMenu>() {
-    override fun areItemsTheSame(oldItem: MbMenu, newItem: MbMenu): Boolean {
+object MbMenuDiff : DiffUtil.ItemCallback<MbMenuDto>() {
+    override fun areItemsTheSame(oldItem: MbMenuDto, newItem: MbMenuDto): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: MbMenu, newItem: MbMenu): Boolean {
+    override fun areContentsTheSame(oldItem: MbMenuDto, newItem: MbMenuDto): Boolean {
         return oldItem == newItem
     }
 }

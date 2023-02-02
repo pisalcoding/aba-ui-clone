@@ -1,21 +1,21 @@
 package me.pisal.abaclone.scene
 
 import android.content.Context
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
+import androidx.lifecycle.*
 import me.pisal.abaclone.data.repo.account.AccountsRepository
+import me.pisal.abaclone.module.RepoQualifier
 import org.koin.java.KoinJavaComponent.get
 
 class MainViewModel : ViewModel() {
 
-    private val accountsRepo = get<AccountsRepository>(AccountsRepository::class.java)
+    private val accountsRepo = get<AccountsRepository>(AccountsRepository::class.java, RepoQualifier.Remote)
 
-    private val _authenticated = MutableLiveData<Boolean>().apply { value = false }
+    private val _authenticated = MutableLiveData<Boolean>()
     val authenticated: LiveData<Boolean> = _authenticated
     fun authStatusChanged(authenticated: Boolean) {
-        _authenticated.value = authenticated
+        if (_authenticated.value != authenticated) {
+            _authenticated.value = authenticated
+        }
     }
 
     fun accounts(context: Context) = liveData {

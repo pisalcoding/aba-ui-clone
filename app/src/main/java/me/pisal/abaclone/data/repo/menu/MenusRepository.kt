@@ -1,13 +1,13 @@
 package me.pisal.abaclone.data.repo.menu
 
 import me.pisal.abaclone.common.TResult
+import me.pisal.abaclone.model.dto.MbMenuDto
 import me.pisal.abaclone.model.dto.ResponseWrapper
-import me.pisal.abaclone.model.entity.MbMenu
 
 interface MenusRepository {
-    suspend fun homeMenus(): TResult<ResponseWrapper<List<MbMenu>>>
-    suspend fun transferChannelMenus(): TResult<ResponseWrapper<List<MbMenu>>>
-    suspend fun paymentChannelMenus(): TResult<ResponseWrapper<List<MbMenu>>>
-    suspend fun newAccountMenus(): TResult<ResponseWrapper<List<MbMenu>>>
-    suspend fun newLoanMenus(): TResult<ResponseWrapper<List<MbMenu>>>
+    suspend fun homeMenus(useCache: Boolean = true): TResult<ResponseWrapper<List<MbMenuDto>>>
+    suspend fun transferChannelMenus(useCache: Boolean = true): TResult<ResponseWrapper<List<MbMenuDto>>>
+    suspend fun paymentChannelMenus(useCache: Boolean = true): TResult<ResponseWrapper<List<MbMenuDto>>>
+    suspend fun newAccountMenus(useCache: Boolean = true): TResult<ResponseWrapper<List<MbMenuDto>>>
+    suspend fun newLoanMenus(useCache: Boolean = true): TResult<ResponseWrapper<List<MbMenuDto>>>
 }
