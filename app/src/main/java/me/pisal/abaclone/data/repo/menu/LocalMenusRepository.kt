@@ -16,30 +16,35 @@ class LocalMenusRepository(
         return safeRealmCall {
             realm.query(MbMenuDao::class, "type = $0", menuType.name)
                 .find()
-                .map { MbMenuDto.fromDao(it) }
+                .map { it.toDto() }
                 .run {
                     ResponseWrapper(this)
                 }
         }
     }
 
-    override suspend fun homeMenus(): TResult<ResponseWrapper<List<MbMenuDto>>> {
+    override suspend fun homeMenus(useCache: Boolean):
+            TResult<ResponseWrapper<List<MbMenuDto>>> {
         return queryMenu(menuType = MenuType.HOME)
     }
 
-    override suspend fun transferChannelMenus(): TResult<ResponseWrapper<List<MbMenuDto>>> {
+    override suspend fun transferChannelMenus(useCache: Boolean):
+            TResult<ResponseWrapper<List<MbMenuDto>>> {
         return queryMenu(menuType = MenuType.TRANSFER)
     }
 
-    override suspend fun paymentChannelMenus(): TResult<ResponseWrapper<List<MbMenuDto>>> {
+    override suspend fun paymentChannelMenus(useCache: Boolean):
+            TResult<ResponseWrapper<List<MbMenuDto>>> {
         return queryMenu(menuType = MenuType.PAYMENT)
     }
 
-    override suspend fun newAccountMenus(): TResult<ResponseWrapper<List<MbMenuDto>>> {
+    override suspend fun newAccountMenus(useCache: Boolean):
+            TResult<ResponseWrapper<List<MbMenuDto>>> {
         return queryMenu(menuType = MenuType.NEW_ACCOUNT)
     }
 
-    override suspend fun newLoanMenus(): TResult<ResponseWrapper<List<MbMenuDto>>> {
+    override suspend fun newLoanMenus(useCache: Boolean):
+            TResult<ResponseWrapper<List<MbMenuDto>>> {
         return queryMenu(menuType = MenuType.LOANS)
     }
 }

@@ -1,7 +1,7 @@
 package me.pisal.abaclone.model
 
-interface IMbMenu {
-    var id: Int
+interface IMbMenu: Identifiable {
+    override var id: String
     var title: String
     var type: String
     var usesCircularIcon: Int?

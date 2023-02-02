@@ -20,6 +20,7 @@ class PaymentsFragment : BaseFragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentPaymentsBinding.inflate(inflater, container, false)
+        setupList()
         return binding.root
     }
 
@@ -30,24 +31,25 @@ class PaymentsFragment : BaseFragment() {
             safeRunOnUiThread(100) {
                 setNavigationBackgroundColor(R.color.white)
             }
-            mainViewModel.authenticated.observe(viewLifecycleOwner) {
-                if (it) {
-                    setupList()
-                }
-            }
         }
     }
 
     private fun setupList() {
-        binding.rcl.adapter = TrxChannelAdapter().apply {
-            viewModel.menus().observe(viewLifecycleOwner) {
-                when (it) {
-                    is TResult.Success -> {
-                        it.data?.data?.let(::submitList)
+        val adapter = TrxChannelAdapter().also { binding.rcl.adapter = it }
+        withMainActivity {
+            mainViewModel.authenticated
+                .observe(viewLifecycleOwner) { authenticated ->
+                    if (authenticated) {
+                        viewModel.menus(true).observe(viewLifecycleOwner) {
+                            when (it) {
+                                is TResult.Success -> {
+                                    it.data?.data?.let(adapter::submitList)
+                                }
+                                else -> {}
+                            }
+                        }
                     }
-                    else -> {}
                 }
-            }
         }
     }
 }

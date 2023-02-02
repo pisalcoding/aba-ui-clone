@@ -2,6 +2,7 @@ package me.pisal.abaclone.module
 
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
+import me.pisal.abaclone.data.persistence.realmSchemaVersion
 import me.pisal.abaclone.data.repo.account.AccountsRepository
 import me.pisal.abaclone.data.repo.account.AccountsRepositoryImpl
 import me.pisal.abaclone.data.repo.auth.AuthRepository

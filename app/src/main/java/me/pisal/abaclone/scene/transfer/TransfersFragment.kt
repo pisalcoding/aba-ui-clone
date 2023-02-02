@@ -41,7 +41,7 @@ class TransfersFragment : BaseFragment() {
 
     private fun setupList() {
         binding.rcl.adapter = TrxChannelAdapter().apply {
-            viewModel.menus().observe(viewLifecycleOwner) {
+            viewModel.menus(true).observe(viewLifecycleOwner) {
                 when (it) {
                     is TResult.Success -> {
                         it.data?.data?.let(::submitList)

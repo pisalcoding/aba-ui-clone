@@ -8,7 +8,15 @@ class PaymentsViewModel(
     private val menusRepository: MenusRepository,
 ) : ViewModel() {
 
-    fun menus() = liveData {
-        emit(menusRepository.paymentChannelMenus())
+    fun menus(useCache: Boolean) = liveData {
+        /**
+         * Return the cached data first
+         */
+        emit(menusRepository.paymentChannelMenus(useCache))
+
+        /**
+         * Then fetch in the background to update cache
+         */
+        menusRepository.paymentChannelMenus(false)
     }
 }

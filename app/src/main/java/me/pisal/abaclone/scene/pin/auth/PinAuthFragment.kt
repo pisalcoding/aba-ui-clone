@@ -11,7 +11,10 @@ import androidx.navigation.fragment.findNavController
 import me.pisal.abaclone.R
 import me.pisal.abaclone.common.TResult
 import me.pisal.abaclone.databinding.FragmentPinAuthBinding
-import me.pisal.abaclone.scene.*
+import me.pisal.abaclone.scene.hideActionBar
+import me.pisal.abaclone.scene.hideBlurIfNotLoading
+import me.pisal.abaclone.scene.setNavigationBackgroundColor
+import me.pisal.abaclone.scene.withMainActivity
 
 class PinAuthFragment : Fragment() {
 
@@ -35,13 +38,11 @@ class PinAuthFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         withMainActivity {
-            //            showBlur()
             hideActionBar()
             setNavigationBackgroundColor(R.color.app_primary)
             mainViewModel.authenticated.observe(viewLifecycleOwner) {
                 if (it) {
                     findNavController().navigateUp()
-                    // dismiss()
                 }
             }
         }
@@ -58,7 +59,7 @@ class PinAuthFragment : Fragment() {
     private fun initListeners() {
         with(binding) {
             btnCancel.setOnClickListener {
-                findNavController().popBackStack()
+                findNavController().popBackStack(R.id.nav_home, false)
             }
 
             pinAuthView.onFilled = { pin ->

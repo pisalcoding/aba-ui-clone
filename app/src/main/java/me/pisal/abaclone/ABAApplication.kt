@@ -31,14 +31,15 @@ class ABAApplication: Application() {
     private fun initKoin() {
         startKoin {
             androidContext(this@ABAApplication)
-            modules(listOf(apiModule, remoteDataModule, persistenceModule, viewModelModule))
+            modules(listOf(apiModule, persistenceModule, remoteDataModule, viewModelModule))
         }
     }
 
     private fun initRealm() {
-        val config = RealmConfiguration.Builder(schema = setOf(MbMenuDao::class))
+        val config = RealmConfiguration.Builder(schema = setOf())
+            .schemaVersion(2)
             .build()
-        val realm: Realm = Realm.open(config)
+        Realm.open(config)
     }
 }
 
