@@ -20,6 +20,11 @@ fun MainActivity.setNavigationBackgroundColor(@ColorRes colorResId: Int){
     window.navigationBarColor = resources.getColor(colorResId, theme)
 }
 
+fun MainActivity.setStatusBarColor(@ColorRes colorResId: Int){
+    window.statusBarColor = resources.getColor(colorResId, theme)
+}
+
+
 fun MainActivity.showBlur() {
      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
          findViewById<View>(R.id.app_bar_main)?.run {

@@ -23,4 +23,12 @@
     <style name="Theme.ABAClone.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.ABAClone.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DialogFragmentStyle.FullScreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">?colorOnSurface</item>
+        <item name="android:navigationBarColor">?colorOnSurface</item>
+    </style>
 </resources>

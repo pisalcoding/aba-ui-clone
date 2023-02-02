@@ -14,6 +14,9 @@ An Android UI clone of ABA Mobile app for education purpose only.
     <img src="screenshots/home.png" width="300" height="auto" align="center">
     <img src="screenshots/pin.png" width="300" height="auto" align="center">
     <img src="screenshots/accounts.png" width="300" height="auto" align="center">
+    <img src="screenshots/drawer_menu.png" width="300" height="auto" align="center">
+    <img src="screenshots/my_qr.png" width="300" height="auto" align="center">
+    
 </div>
 
 # Disclaimer 

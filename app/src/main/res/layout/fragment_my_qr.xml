@@ -4,151 +4,269 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_black_half_transparent" />
-
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_aba_toolbar" />
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_aba_toolbar" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/qr"
+                    android:textColor="?colorOnPrimary"
+                    android:textSize="22sp" />
+            </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:text="@string/qr"
-                android:textColor="?colorOnPrimary"
-                android:textSize="22sp" />
-        </LinearLayout>
+                android:text="@string/show_this_qr_to_receive_money_from_others"
+                android:textColor="?colorOnPrimary" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/show_this_qr_to_receive_money_from_others"
-            android:textColor="?colorOnPrimary" />
-
-        <RelativeLayout
-            android:id="@+id/layoutQrContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_large"
-            android:layout_marginEnd="@dimen/spacing_large"
-            android:paddingStart="@dimen/spacing_large"
-            android:paddingTop="@dimen/spacing_large"
-            android:paddingEnd="@dimen/spacing_large">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardQr"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_large"
                 android:layout_marginEnd="@dimen/spacing_large"
-                android:layout_marginBottom="@dimen/spacing_large"
-                android:paddingStart="@dimen/spacing_medium"
-                android:paddingEnd="@dimen/spacing_medium"
-                app:cardBackgroundColor="?colorSurface"
-                app:cardCornerRadius="25dp">
+                android:paddingStart="@dimen/spacing_large"
+                android:paddingTop="@dimen/spacing_large"
+                android:paddingEnd="@dimen/spacing_large">
 
-                <RelativeLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="450dp"
+                    android:layout_marginStart="@dimen/spacing_large"
+                    android:layout_marginEnd="@dimen/spacing_large"
+                    android:layout_marginBottom="@dimen/spacing_large"
+                    android:paddingStart="@dimen/spacing_medium"
+                    android:paddingEnd="@dimen/spacing_medium"
+                    app:cardBackgroundColor="?colorSurface"
+                    app:cardCornerRadius="25dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="52dp"
-                        android:background="@color/color_bakong"
-                        android:visibility="visible"
-                        android:id="@+id/lyt_header">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/lyt_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@color/color_bakong"
+                            android:visibility="visible">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="15dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_khqr_tran_bg" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_below="@id/lyt_header"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="-18dp"
+                            android:layout_marginEnd="-18dp"
+                            android:background="@color/color_bakong"
+                            android:rotation="45" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@id/txt_balance"
+                            android:layout_marginStart="24dp"
+                            android:text="Pisal UTNGY"
+                            android:textColor="?colorOnSurface" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@id/line"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="$ 0.00"
+                            android:textColor="?colorOnSurface"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+                        <View
+                            android:id="@+id/line"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_above="@id/img_generated_qr"
+                            android:layout_marginBottom="24dp"
+                            android:background="@drawable/dashed_line" />
 
                         <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="15dp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_khqr_tran_bg" />
-
+                            android:id="@+id/img_generated_qr"
+                            android:layout_width="280dp"
+                            android:layout_height="280dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="@dimen/spacing_large"
+                            android:src="@drawable/img_sample_qr" />
                     </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-
-                    <View
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@color/color_bakong"
-                        android:layout_below="@id/lyt_header"
-                        android:layout_alignParentEnd="true"
-                        android:rotation="45"
-                        android:layout_marginTop="-18dp"
-                        android:layout_marginEnd="-18dp"/>
-
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/btn_add_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_below="@id/card"
+                    android:padding="@dimen/spacing_medium"
+                    android:background="@drawable/bg_rounded_white_transp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@animator/push_down">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_round_add_circle_outline_24"
+                        android:tint="?colorSecondary"/>
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/show_this_qr_to_receive_money_from_others"
-                        android:textColor="?colorOnSurface"
-                        android:layout_above="@id/line"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginStart="24dp"/>
+                        android:text="ADD AMOUNT"
+                        android:textColor="?colorSecondary"
+                        android:layout_marginStart="8dp"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    <View
-                        android:id="@+id/line"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_above="@id/img_generated_qr"
-                        android:background="@drawable/dashed_line"
-                        android:layout_marginBottom="24dp"/>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/lyt_source_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_below="@id/btn_add_amount"
+                    android:padding="@dimen/spacing_medium">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Receive to:"
+                        android:textColor="?colorOnPrimary"
+                        android:layout_marginStart="8dp"/>
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/img_generated_qr"
-                        android:layout_width="280dp"
-                        android:layout_height="280dp"
-                        android:layout_marginBottom="@dimen/spacing_large"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/img_sample_qr"/>
-                </RelativeLayout>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btn_source_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:stateListAnimator="@animator/push_down"
+                        android:gravity="center">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="000 533 492"
+                            android:textColor="?colorSecondary"
+                            android:layout_marginStart="8dp"/>
 
-                <!-- Dashed Line -->
-                <!--                <View-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="2dp"-->
-                <!--                    android:layout_below="@id/layoutAmtCurr"-->
-                <!--                    android:background="@drawable/dashed_line" />-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_round_keyboard_arrow_down_24"
+                            android:tint="?colorSecondary"
+                            android:layout_marginHorizontal="8dp"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <!--                <View-->
-                <!--                    android:layout_width="40dp"-->
-                <!--                    android:layout_height="40dp"-->
-                <!--                    android:layout_alignParentEnd="true"-->
-                <!--                    android:layout_marginTop="-20dp"-->
-                <!--                    android:layout_marginEnd="-20dp"-->
-                <!--                    android:background="@color/colorBakong"-->
-                <!--                    android:rotation="45" />-->
-
-                <!--                <androidx.appcompat.widget.AppCompatImageView-->
-                <!--                    android:id="@+id/imgBankLogo"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="@dimen/medium_icon"-->
-                <!--                    android:layout_centerInParent="true"-->
-                <!--                    android:layout_marginTop="@dimen/spacing_medium"-->
-                <!--                    android:src="@drawable/ic_bakong"-->
-                <!--                    android:visibility="gone" />-->
-
-                <!-- QR Code -->
-            </androidx.cardview.widget.CardView>
-        </RelativeLayout>
-    </LinearLayout>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/lyt_source_account"
+                    android:layout_marginTop="16dp">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btn_download"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="16dp">
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:src="@drawable/ic_outline_file_download_24"
+                            android:background="@drawable/bg_circular_white_transp"
+                            android:tint="?colorOnPrimary"/>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Download"
+                            android:textColor="?colorOnPrimary" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btn_screenshot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="16dp">
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:src="@drawable/ic_outline_screenshot_24"
+                            android:background="@drawable/bg_circular_white_transp"
+                            android:tint="?colorOnPrimary"/>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Screenshot"
+                            android:textColor="?colorOnPrimary" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btn_share_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="16dp">
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:src="@drawable/ic_baseline_link_24"
+                            android:background="@drawable/bg_circular_white_transp"
+                            android:tint="?colorOnPrimary"/>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Share Link"
+                            android:textColor="?colorOnPrimary" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

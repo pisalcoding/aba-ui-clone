@@ -34,4 +34,7 @@
         />
 
     <action app:destination="@id/pinAuthFragment" android:id="@+id/toPinAuth" app:launchSingleTop="true" app:popUpToInclusive="true"/>
+    <dialog
+        android:id="@+id/myQrFragment"
+        android:name="me.pisal.abaclone.scene.myqr.MyQrFragment" />
 </navigation>

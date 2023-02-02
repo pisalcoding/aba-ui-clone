@@ -52,6 +52,16 @@ class HomeFragment : BaseFragment(sensitive = false, requireAuth = false) {
         inflater.inflate(R.menu.home, menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_my_khqr -> {
+                findNavController().navigate(R.id.myQrFragment)
+            }
+            else -> {}
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     private fun initListeners() {
         with(binding) {
             listOf(
