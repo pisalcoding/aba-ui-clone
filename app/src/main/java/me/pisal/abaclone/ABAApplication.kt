@@ -14,10 +14,7 @@ import com.bumptech.glide.request.RequestOptions
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import me.pisal.abaclone.model.dao.MbMenuDao
-import me.pisal.abaclone.module.apiModule
-import me.pisal.abaclone.module.RemoteDataModule
-import me.pisal.abaclone.module.persistenceModule
-import me.pisal.abaclone.module.viewModelModule
+import me.pisal.abaclone.module.*
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -34,7 +31,7 @@ class ABAApplication: Application() {
     private fun initKoin() {
         startKoin {
             androidContext(this@ABAApplication)
-            modules(listOf(apiModule, RemoteDataModule, persistenceModule, viewModelModule))
+            modules(listOf(apiModule, remoteDataModule, persistenceModule, viewModelModule))
         }
     }
 
