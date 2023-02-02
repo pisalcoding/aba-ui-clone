@@ -10,4 +10,5 @@
     <color name="reticle_ripple">#9AFFFFFF</color>
     <color name="barcode_reticle_background">#99000000</color>
     <color name="barcode_reticle_stroke">#40000000</color>
+    <color name="color_bakong">#E21A1A</color>
 </resources>
