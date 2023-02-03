@@ -66,6 +66,7 @@ class HomeFragment : BaseFragment(sensitive = false, requireAuth = false) {
         with(binding) {
             listOf(
                 menuR1c1.root to R.id.accountsFragment,
+                menuR1c2.root to R.id.cardsFragment,
                 menuR1c3.root to R.id.paymentsFragment,
 
                 menuR2c1.root to R.id.newAccountsFragment,
