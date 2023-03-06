@@ -33,4 +33,5 @@
     <string name="save_here_aba_accounts_of_your_relatives_friends_or_business_partners_to_whom_you_transfer_funds_frequently">Save here ABA accounts of your relatives, friends or business partners, to whom you transfer funds frequently.</string>
     <string name="qr">QR</string>
     <string name="show_this_qr_to_receive_money_from_others">Show this QR to receive money from others.</string>
+    <string name="instruction_to_add_card">Press (+) button above to order a new \n payment card</string>
 </resources>

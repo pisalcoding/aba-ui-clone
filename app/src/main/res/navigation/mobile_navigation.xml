@@ -32,6 +32,9 @@
         android:id="@+id/scanQrFragment"
         android:name="me.pisal.abaclone.scene.scanqr.ScanQrFragment"
         />
+    <fragment android:id="@+id/cardsFragment"
+        android:name="me.pisal.abaclone.scene.card.CardsFragment"
+        tools:layout="@layout/fragment_card"/>
 
     <action app:destination="@id/pinAuthFragment" android:id="@+id/toPinAuth" app:launchSingleTop="true" app:popUpToInclusive="true"/>
     <dialog
