@@ -1,45 +1,138 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E7EEF0"
     android:orientation="vertical">
-
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="20dp"
         android:backgroundTint="@color/app_primary"
         android:foregroundGravity="center"
+        android:elevation="16dp"
         app:cardCornerRadius="15dp">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
-
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:layout_width="80dp"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:background="@drawable/bg_circle_outlined_white"-->
-<!--                android:padding="24dp"-->
-<!--                android:scaleType="fitEnd"-->
-<!--                android:src="@drawable/ic_add_24"-->
-<!--                android:tint="@color/white" />-->
-
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/lbl_add_new_card"
+                android:id="@+id/lbl_card_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Cards"
+                android:text="XXXX   XXXX   XXXX   XXXX"
+                android:padding="10dp"
                 android:textColor="?colorOnPrimarySurface"
-                android:textSize="20sp" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/component"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_card_number"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/lbl_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="MONTH/YEAR"
+                    android:textColor="?colorOnPrimarySurface"
+                    android:textSize="12sp"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lbl_expire_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="09/25"
+                    android:textColor="?colorOnPrimarySurface"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/lbl_digit_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_card_number"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="74dp"
+                android:layout_toStartOf="@+id/component"
+                android:gravity="center"
+                android:text="1234"
+                android:textColor="?colorOnPrimarySurface"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lbl_valid_thru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/component"
+                android:gravity="center"
+                android:text="VALID\nTHRU"
+                android:textColor="?colorOnPrimarySurface"
+                android:textSize="8sp"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"
+                tools:ignore="SmallSp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/component"
+                android:textColor="?colorOnPrimarySurface"
+                android:text="Android Studio"
+                android:padding="@dimen/spacing_medium"
+                android:textSize="20sp"
+                />
+        </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mastercard Debit card"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="001 123 123"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="|"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mastercard Debit card"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
+
 </androidx.appcompat.widget.LinearLayoutCompat>
 
