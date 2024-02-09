@@ -14,7 +14,7 @@ class LocalMenusRepository(
 
     private suspend fun queryMenu(menuType: MenuType): TResult<ResponseWrapper<List<MbMenuDto>>> {
         return safeRealmCall {
-            realm.query(MbMenuDao::class, "type = $0", menuType.name)
+            realm.query(MbMenuDao::class)
                 .find()
                 .map { it.toDto() }
                 .run {

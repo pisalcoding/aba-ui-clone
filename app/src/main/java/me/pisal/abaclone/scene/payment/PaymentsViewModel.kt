@@ -13,10 +13,5 @@ class PaymentsViewModel(
          * Return the cached data first
          */
         emit(menusRepository.paymentChannelMenus(useCache))
-
-        /**
-         * Then fetch in the background to update cache
-         */
-        menusRepository.paymentChannelMenus(false)
     }
 }

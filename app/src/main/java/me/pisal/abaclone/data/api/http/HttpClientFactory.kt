@@ -1,6 +1,5 @@
 package me.pisal.abaclone.data.api.http
 
-import me.pisal.abaclone.BuildConfig
 import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,27 +10,22 @@ import retrofit2.converter.gson.GsonConverterFactory
 class HttpClientFactory private constructor() {
 
     val baseUrl by lazy {
-        BuildConfig.URL_SCHEME + "://" + BuildConfig.DOMAIN_NAME
+        "https://example.com/"
     }
 
     val baseApiUrl by lazy {
-        baseUrl + BuildConfig.BASE_API_PATH
+        baseUrl + "api/v1.0.0"
     }
 
     fun sslPinner(): CertificatePinner {
         return CertificatePinner.Builder().apply {
-            val hashes = BuildConfig.SERVER_HASHES.split(",")
-            hashes.forEach { add(BuildConfig.DOMAIN_NAME, it) }
+            add("sha256/deeLlGI/+po/examplemEPv9bre96kPf1FDbiFtaTwM=")
         }.build()
     }
 
     fun logger(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
-            if (BuildConfig.DEBUG) {
-                level = HttpLoggingInterceptor.Level.BODY
-            } else {
-                level = HttpLoggingInterceptor.Level.NONE
-            }
+            level = HttpLoggingInterceptor.Level.BODY
         }
     }
 
@@ -41,12 +35,8 @@ class HttpClientFactory private constructor() {
         encryptionInterceptor: EncryptionInterceptor,
     ): OkHttpClient {
         return OkHttpClient.Builder().apply {
-            if (BuildConfig.PIN_SSL) {
-                certificatePinner(certificatePinner)
-            }
-            if (BuildConfig.ENCRYPT_DATA_TRANSPORT) {
-                addInterceptor(encryptionInterceptor)
-            }
+            // certificatePinner(certificatePinner)
+            // addInterceptor(encryptionInterceptor)
             addInterceptor(logger)
         }.build()
     }

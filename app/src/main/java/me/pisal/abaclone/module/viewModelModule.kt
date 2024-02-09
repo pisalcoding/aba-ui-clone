@@ -14,10 +14,10 @@ import org.koin.dsl.module
 val viewModelModule = module {
     single { ABAApplication() }
     single { MainViewModel() }
-    viewModel { PaymentsViewModel(get(RepoQualifier.Remote)) }
-    viewModel { TransfersViewModel(get(RepoQualifier.Remote)) }
-    viewModel { NewAccountsViewModel(get(RepoQualifier.Remote)) }
-    viewModel { NewLoansViewModel(get(RepoQualifier.Remote)) }
+    viewModel { PaymentsViewModel(get(RepoQualifier.Local)) }
+    viewModel { TransfersViewModel(get(RepoQualifier.Local)) }
+    viewModel { NewAccountsViewModel(get(RepoQualifier.Local)) }
+    viewModel { NewLoansViewModel(get(RepoQualifier.Local)) }
 
     viewModel { WorkflowModel(get()) }
     viewModel { ScanQrViewModel() }

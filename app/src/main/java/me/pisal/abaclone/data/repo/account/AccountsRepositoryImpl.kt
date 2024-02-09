@@ -27,6 +27,24 @@ class AccountsRepositoryImpl : AccountsRepository {
                 accountNo = "010 855 111",
                 colorHex = "#925FB1",
                 money = Money(currency = "KHR", amount = BigDecimal(122345.12))
+            ),
+            Account(
+                id = "010855111",
+                title = "Mobile Joint Savings Account",
+                category = "Mobile Savings",
+                primary = false,
+                accountNo = "010 855 222",
+                colorHex = "#00796B",
+                money = Money(currency = "KHR", amount = BigDecimal(122345.12))
+            ),
+            Account(
+                id = "010855111",
+                title = "Mobile Fixed Deposit",
+                category = "Fixed Deposit",
+                primary = false,
+                accountNo = "010 855 333",
+                colorHex = "#607D8B",
+                money = Money(currency = "KHR", amount = BigDecimal(122345.12))
             )
         )
         return TResult.Success(

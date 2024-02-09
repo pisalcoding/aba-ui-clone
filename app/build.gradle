@@ -3,65 +3,69 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
-    id 'io.realm.kotlin'
+//    id 'io.realm.kotlin'
+}
+
+apply {
+    plugin("realm-android")
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "me.pisal.abaclone"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    flavorDimensions "version"
-    productFlavors {
-        offline {
-            dimension "version"
-            applicationIdSuffix ".offline"
-            buildConfigField "String", "URL_SCHEME", '"http"'
-            buildConfigField "String", "DOMAIN_NAME", '"api.example.com"'
-            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
-            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
-            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'false'
-            buildConfigField "Boolean", "PIN_SSL", 'false'
-        }
-        dev {
-            dimension "version"
-            applicationIdSuffix ".dev"
-            buildConfigField "String", "URL_SCHEME", '"http"'
-            buildConfigField "String", "DOMAIN_NAME", '"10.0.2.2"'
-            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
-            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
-            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'false'
-            buildConfigField "Boolean", "PIN_SSL", 'false'
-        }
-        staging {
-            dimension "version"
-            applicationIdSuffix ".staging"
-            buildConfigField "String", "URL_SCHEME", '"https"'
-            buildConfigField "String", "DOMAIN_NAME", '"api.example.com"'
-            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
-            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
-            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'true'
-            buildConfigField "Boolean", "PIN_SSL", 'false'
-        }
-        pro {
-            dimension "version"
-            applicationIdSuffix ""
-            buildConfigField "String", "URL_SCHEME", '"https"'
-            buildConfigField "String", "DOMAIN_NAME", '"api.example.com"'
-            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
-            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
-            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'true'
-            buildConfigField "Boolean", "PIN_SSL", 'true'
-        }
-    }
+//
+//    flavorDimensions "version"
+//    productFlavors {
+//        offline {
+//            dimension "version"
+//            applicationIdSuffix ".offline"
+//            buildConfigField "String", "URL_SCHEME", '"http"'
+//            buildConfigField "String", "DOMAIN_NAME", '"api.example.com"'
+//            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
+//            buildConfigField "String", "SERVER_HASHES", '""'
+//            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'false'
+//            buildConfigField "Boolean", "PIN_SSL", 'false'
+//        }
+//        dev {
+//            dimension "version"
+//            applicationIdSuffix ".dev"
+//            buildConfigField "String", "URL_SCHEME", '"http"'
+//            buildConfigField "String", "DOMAIN_NAME", '"10.0.2.2"'
+//            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
+//            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
+//            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'false'
+//            buildConfigField "Boolean", "PIN_SSL", 'false'
+//        }
+//        staging {
+//            dimension "version"
+//            applicationIdSuffix ".staging"
+//            buildConfigField "String", "URL_SCHEME", '"https"'
+//            buildConfigField "String", "DOMAIN_NAME", '"api.example.com"'
+//            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
+//            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
+//            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'true'
+//            buildConfigField "Boolean", "PIN_SSL", 'false'
+//        }
+//        pro {
+//            dimension "version"
+//            applicationIdSuffix ""
+//            buildConfigField "String", "URL_SCHEME", '"https"'
+//            buildConfigField "String", "DOMAIN_NAME", '"api.example.com"'
+//            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
+//            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
+//            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'true'
+//            buildConfigField "Boolean", "PIN_SSL", 'true'
+//        }
+//    }
 
     buildTypes {
         release {
@@ -80,6 +84,7 @@ android {
         viewBinding true
         dataBinding true
     }
+    namespace 'me.pisal.abaclone'
 }
 
 dependencies {
@@ -111,6 +116,7 @@ dependencies {
 
     // Third-party UI libraries
     implementation 'com.github.pisalcoding:android-passcode-view:1.0.0'
+//    implementation 'com.github.pisalcoding:alerter:v1.0.0-alpha'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     // ML Kit
