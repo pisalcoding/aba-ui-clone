@@ -11,35 +11,27 @@ import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.module.AppGlideModule
 import com.bumptech.glide.request.RequestOptions
-import io.realm.kotlin.Realm
-import io.realm.kotlin.RealmConfiguration
-import me.pisal.abaclone.model.dao.MbMenuDao
-import me.pisal.abaclone.module.*
+import me.pisal.abaclone.data.repo.FakerManager
+import me.pisal.abaclone.di.appModule
+import me.pisal.abaclone.di.persistenceModule
+import me.pisal.abaclone.di.viewModelModule
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import java.io.InputStream
 
-class ABAApplication: Application() {
+class ABAApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
         initKoin()
-        initRealm()
     }
 
     private fun initKoin() {
         startKoin {
             androidContext(this@ABAApplication)
-            modules(listOf(apiModule, persistenceModule, remoteDataModule, viewModelModule))
+            modules(listOf(appModule, persistenceModule, viewModelModule))
         }
-    }
-
-    private fun initRealm() {
-        val config = RealmConfiguration.Builder(schema = setOf())
-            .schemaVersion(2)
-            .build()
-        Realm.open(config)
     }
 }
 

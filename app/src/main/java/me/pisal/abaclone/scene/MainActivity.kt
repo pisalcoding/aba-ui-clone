@@ -7,13 +7,16 @@ import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import kotlinx.coroutines.launch
 import me.pisal.abaclone.R
+import me.pisal.abaclone.data.repo.FakerManager
 import me.pisal.abaclone.databinding.ActivityMainBinding
 import org.koin.android.ext.android.inject
 
@@ -40,6 +43,14 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        initFaker()
+    }
+
+    private fun initFaker() {
+        lifecycleScope.launch {
+            FakerManager.init()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

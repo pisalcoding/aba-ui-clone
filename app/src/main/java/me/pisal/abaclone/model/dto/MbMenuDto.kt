@@ -1,9 +1,7 @@
 package me.pisal.abaclone.model.dto
 
 import com.google.gson.annotations.SerializedName
-import me.pisal.abaclone.model.IDto
 import me.pisal.abaclone.model.IMbMenu
-import me.pisal.abaclone.model.dao.MbMenuDao
 
 data class MbMenuDto(
 
@@ -35,13 +33,16 @@ data class MbMenuDto(
 	override var highlightIcons: String? = null,
 
 	@field:SerializedName("loc")
-	override var localDrawableId: String? = null,
+	override var localDrawableId: Int? = null,
 
 	@field:SerializedName("stt")
 	override var subtitle: String? = null,
 
 	@field:SerializedName("sco")
 	override var serviceCode: String? = null,
+
+	@field:SerializedName("pid")
+	override var parentServiceCode: String? = null,
 
 	@field:SerializedName("out")
 	override var needsIconOutline: Int? = null,
@@ -54,28 +55,28 @@ data class MbMenuDto(
 
 	@field:SerializedName("sta")
 	override var status: Int? = null,
-) : IDto<MbMenuDao>, IMbMenu {
+) : IMbMenu {
 
-	override fun toDao(): MbMenuDao {
-		return MbMenuDao().apply {
-			this@apply.id = this@MbMenuDto.id
-			this@apply.title = this@MbMenuDto.title
-			this@apply.type = this@MbMenuDto.type
-			this@apply.usesCircularIcon = this@MbMenuDto.usesCircularIcon
-			this@apply.terminalCode = this@MbMenuDto.terminalCode
-			this@apply.icon = this@MbMenuDto.icon
-			this@apply.version = this@MbMenuDto.version
-			this@apply.enabled = this@MbMenuDto.enabled
-			this@apply.highlightIcons = this@MbMenuDto.highlightIcons
-			this@apply.localDrawableId = this@MbMenuDto.localDrawableId
-			this@apply.subtitle = this@MbMenuDto.subtitle
-			this@apply.serviceCode = this@MbMenuDto.serviceCode
-			this@apply.needsIconOutline = this@MbMenuDto.needsIconOutline
-			this@apply.requiresAuth = this@MbMenuDto.requiresAuth
-			this@apply.subButtonText = this@MbMenuDto.subButtonText
-			this@apply.status = this@MbMenuDto.status
-		}
-	}
+//	override fun toDao(): MbMenuDao {
+//		return MbMenuDao().apply {
+//			this@apply.id = this@MbMenuDto.id
+//			this@apply.title = this@MbMenuDto.title
+//			this@apply.type = this@MbMenuDto.type
+//			this@apply.usesCircularIcon = this@MbMenuDto.usesCircularIcon
+//			this@apply.terminalCode = this@MbMenuDto.terminalCode
+//			this@apply.icon = this@MbMenuDto.icon
+//			this@apply.version = this@MbMenuDto.version
+//			this@apply.enabled = this@MbMenuDto.enabled
+//			this@apply.highlightIcons = this@MbMenuDto.highlightIcons
+//			this@apply.localDrawableId = this@MbMenuDto.localDrawableId
+//			this@apply.subtitle = this@MbMenuDto.subtitle
+//			this@apply.serviceCode = this@MbMenuDto.serviceCode
+//			this@apply.needsIconOutline = this@MbMenuDto.needsIconOutline
+//			this@apply.requiresAuth = this@MbMenuDto.requiresAuth
+//			this@apply.subButtonText = this@MbMenuDto.subButtonText
+//			this@apply.status = this@MbMenuDto.status
+//		}
+//	}
 
 //	companion object {
 //		fun fromDao(dao: MbMenuDao): MbMenuDto {

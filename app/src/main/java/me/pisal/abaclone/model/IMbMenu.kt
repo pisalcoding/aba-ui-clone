@@ -10,9 +10,10 @@ interface IMbMenu: Identifiable {
     var version: Int?
     var enabled: Int?
     var highlightIcons: String?
-    var localDrawableId: String?
+    var localDrawableId: Int?
     var subtitle: String?
     var serviceCode: String?
+    var parentServiceCode: String?
     var needsIconOutline: Int?
     var requiresAuth: Int?
     var subButtonText: String?

@@ -1,4 +1,4 @@
-package me.pisal.abaclone.module
+package me.pisal.abaclone.di
 
 import me.pisal.abaclone.ABAApplication
 import me.pisal.abaclone.scene.MainViewModel

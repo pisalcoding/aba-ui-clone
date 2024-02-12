@@ -52,7 +52,7 @@ class AccountsFragment : BaseFragment() {
         viewModel.totalInUsd.observe(viewLifecycleOwner, binding::setTotalInUsd)
 
         withMainActivity {
-            mainViewModel.accounts(requireContext()).observe(viewLifecycleOwner) {
+            mainViewModel.accounts().observe(viewLifecycleOwner) {
                 binding.rcl.adapter = AccountsAdapter().apply {
                     if (it is TResult.Success && it.data?.data != null) {
                         viewModel.accountsUpdated(it.data.data)
@@ -83,7 +83,7 @@ class AccountsFragment : BaseFragment() {
         }
 
         withMainActivity {
-            mainViewModel.accounts(requireContext()).observe(viewLifecycleOwner) {
+            mainViewModel.accounts().observe(viewLifecycleOwner) {
                 when (it) {
                     is TResult.Success -> {
                         val accounts = it.data?.data ?: listOf()

@@ -10,7 +10,7 @@ import me.pisal.abaclone.databinding.FragmentPaymentsBinding
 import me.pisal.abaclone.scene.*
 import org.koin.android.ext.android.inject
 
-class PaymentsFragment : BaseFragment() {
+class PaymentsFragment : BaseFragment(sensitive = false, requireAuth = false) {
     private val viewModel by inject<PaymentsViewModel>()
     private lateinit var binding: FragmentPaymentsBinding
 
@@ -37,9 +37,9 @@ class PaymentsFragment : BaseFragment() {
     private fun setupList() {
         val adapter = TrxChannelAdapter().also { binding.rcl.adapter = it }
         withMainActivity {
-            mainViewModel.authenticated
-                .observe(viewLifecycleOwner) { authenticated ->
-                    if (authenticated) {
+//            mainViewModel.authenticated
+//                .observe(viewLifecycleOwner) { authenticated ->
+//                    if (authenticated) {
                         viewModel.menus(true).observe(viewLifecycleOwner) {
                             when (it) {
                                 is TResult.Success -> {
@@ -48,8 +48,8 @@ class PaymentsFragment : BaseFragment() {
                                 else -> {}
                             }
                         }
-                    }
-                }
+//                    }
+//                }
         }
     }
 }

@@ -5,7 +5,7 @@ import me.pisal.abaclone.model.dto.AuthResponse
 import me.pisal.abaclone.model.dto.ResponseWrapper
 import me.pisal.abaclone.model.entity.User
 
-class AuthRepositoryImpl : AuthRepository {
+class LocalAuthRepository : AuthRepository {
 
     override suspend fun authenticate(pin: String): TResult<ResponseWrapper<AuthResponse>> {
         return if (pin == "1234") {

@@ -3,11 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
-//    id 'io.realm.kotlin'
-}
-
-apply {
-    plugin("realm-android")
 }
 
 android {
@@ -22,50 +17,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-//
-//    flavorDimensions "version"
-//    productFlavors {
-//        offline {
-//            dimension "version"
-//            applicationIdSuffix ".offline"
-//            buildConfigField "String", "URL_SCHEME", '"http"'
-//            buildConfigField "String", "DOMAIN_NAME", '"api.example.com"'
-//            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
-//            buildConfigField "String", "SERVER_HASHES", '""'
-//            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'false'
-//            buildConfigField "Boolean", "PIN_SSL", 'false'
-//        }
-//        dev {
-//            dimension "version"
-//            applicationIdSuffix ".dev"
-//            buildConfigField "String", "URL_SCHEME", '"http"'
-//            buildConfigField "String", "DOMAIN_NAME", '"10.0.2.2"'
-//            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
-//            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
-//            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'false'
-//            buildConfigField "Boolean", "PIN_SSL", 'false'
-//        }
-//        staging {
-//            dimension "version"
-//            applicationIdSuffix ".staging"
-//            buildConfigField "String", "URL_SCHEME", '"https"'
-//            buildConfigField "String", "DOMAIN_NAME", '"api.example.com"'
-//            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
-//            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
-//            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'true'
-//            buildConfigField "Boolean", "PIN_SSL", 'false'
-//        }
-//        pro {
-//            dimension "version"
-//            applicationIdSuffix ""
-//            buildConfigField "String", "URL_SCHEME", '"https"'
-//            buildConfigField "String", "DOMAIN_NAME", '"api.example.com"'
-//            buildConfigField "String", "BASE_API_PATH", '"/api/v1_0_0/"'
-//            buildConfigField "String", "SERVER_HASHES", '"sha256/deeLlGI/+po/pGgbf58mEPv9bre96kPf1FDbiFtaTwM=,sha256/Oiiz+M00j7i3O7OR2shCYRh9pwgAuhVlIaEij/HsduM="'
-//            buildConfigField "Boolean", "ENCRYPT_DATA_TRANSPORT", 'true'
-//            buildConfigField "Boolean", "PIN_SSL", 'true'
-//        }
-//    }
 
     buildTypes {
         release {
@@ -103,13 +54,7 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.2.0'
 
     // Retrofit and Network Communication
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    implementation "io.reactivex.rxjava3:rxjava:3.0.4"
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
 
     // Security
     implementation 'com.github.pisalcoding:android-hybrid-crypto:1.0.2'
@@ -118,6 +63,7 @@ dependencies {
     implementation 'com.github.pisalcoding:android-passcode-view:1.0.0'
 //    implementation 'com.github.pisalcoding:alerter:v1.0.0-alpha'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'io.bloco:faker:2.0.4'
 
     // ML Kit
     implementation 'com.google.mlkit:barcode-scanning:17.0.2'
@@ -134,7 +80,6 @@ dependencies {
     implementation "io.insert-koin:koin-android-ext:3.0.2"
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt'
-    implementation 'io.realm.kotlin:library-base:1.2.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

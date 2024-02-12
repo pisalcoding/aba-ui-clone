@@ -6,7 +6,7 @@ import me.pisal.abaclone.model.entity.Account
 import me.pisal.abaclone.model.entity.Money
 import java.math.BigDecimal
 
-class AccountsRepositoryImpl : AccountsRepository {
+class LocalAccountsRepository : AccountsRepository {
 
     override suspend fun list(): TResult<ResponseWrapper<List<Account>>> {
         val accounts = listOf(
