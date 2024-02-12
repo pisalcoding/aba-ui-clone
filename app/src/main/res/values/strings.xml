@@ -34,4 +34,7 @@
     <string name="qr">QR</string>
     <string name="show_this_qr_to_receive_money_from_others">Show this QR to receive money from others.</string>
     <string name="instruction_to_add_card">Press (+) button above to order a new \n payment card</string>
+    <string name="tab_transactions">TRANSACTIONS</string>
+    <string name="tab_announcements">ANNOUNCEMENTS</string>
+    <string name="notifications">Notifications</string>
 </resources>

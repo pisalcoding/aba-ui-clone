@@ -11,9 +11,8 @@ import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.module.AppGlideModule
 import com.bumptech.glide.request.RequestOptions
-import me.pisal.abaclone.data.repo.FakerManager
 import me.pisal.abaclone.di.appModule
-import me.pisal.abaclone.di.persistenceModule
+import me.pisal.abaclone.di.dataModule
 import me.pisal.abaclone.di.viewModelModule
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
@@ -30,7 +29,7 @@ class ABAApplication : Application() {
     private fun initKoin() {
         startKoin {
             androidContext(this@ABAApplication)
-            modules(listOf(appModule, persistenceModule, viewModelModule))
+            modules(listOf(appModule, dataModule, viewModelModule))
         }
     }
 }

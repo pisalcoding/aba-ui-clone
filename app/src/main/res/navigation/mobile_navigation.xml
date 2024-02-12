@@ -40,4 +40,10 @@
     <dialog
         android:id="@+id/myQrFragment"
         android:name="me.pisal.abaclone.scene.myqr.MyQrFragment" />
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="me.pisal.abaclone.scene.notifcation.NotificationsFragment"
+        android:label="@string/notifications" />
+
 </navigation>

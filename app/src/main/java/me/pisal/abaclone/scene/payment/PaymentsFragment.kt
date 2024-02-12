@@ -37,9 +37,9 @@ class PaymentsFragment : BaseFragment(sensitive = false, requireAuth = false) {
     private fun setupList() {
         val adapter = TrxChannelAdapter().also { binding.rcl.adapter = it }
         withMainActivity {
-//            mainViewModel.authenticated
-//                .observe(viewLifecycleOwner) { authenticated ->
-//                    if (authenticated) {
+            mainViewModel.authenticated
+                .observe(viewLifecycleOwner) { authenticated ->
+                    if (authenticated) {
                         viewModel.menus(true).observe(viewLifecycleOwner) {
                             when (it) {
                                 is TResult.Success -> {
@@ -48,8 +48,8 @@ class PaymentsFragment : BaseFragment(sensitive = false, requireAuth = false) {
                                 else -> {}
                             }
                         }
-//                    }
-//                }
+                    }
+                }
         }
     }
 }

@@ -54,6 +54,9 @@ class HomeFragment : BaseFragment(sensitive = false, requireAuth = false) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.action_notifications -> {
+                findNavController().navigate(R.id.notificationsFragment)
+            }
             R.id.action_my_khqr -> {
                 findNavController().navigate(R.id.myQrFragment)
             }

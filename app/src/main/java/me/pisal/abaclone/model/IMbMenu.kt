@@ -20,10 +20,3 @@ interface IMbMenu: Identifiable {
     var status: Int?
 }
 
-enum class MenuType {
-    PAYMENT,
-    TRANSFER,
-    NEW_ACCOUNT,
-    LOANS,
-    HOME
-}

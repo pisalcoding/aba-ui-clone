@@ -6,9 +6,11 @@ import me.pisal.abaclone.data.repo.auth.AuthRepository
 import me.pisal.abaclone.data.repo.auth.LocalAuthRepository
 import me.pisal.abaclone.data.repo.menu.LocalMenusRepository
 import me.pisal.abaclone.data.repo.menu.MenusRepository
+import me.pisal.abaclone.data.repo.notification.INotificationRepository
+import me.pisal.abaclone.data.repo.notification.NotificationRepository
 import org.koin.dsl.module
 
-val persistenceModule = module {
+val dataModule = module {
 
     single<MenusRepository>(qualifier = RepoQualifier.Local) {
         LocalMenusRepository()
@@ -20,5 +22,9 @@ val persistenceModule = module {
 
     single<AuthRepository>(qualifier = RepoQualifier.Local) {
         LocalAuthRepository()
+    }
+
+    single<INotificationRepository> {
+        NotificationRepository()
     }
 }
