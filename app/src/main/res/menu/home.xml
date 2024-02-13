@@ -7,11 +7,6 @@
         app:showAsAction="always"
         android:title="Notifications"/>
     <item
-        android:id="@+id/action_contact_us"
-        android:icon="@drawable/ic_contact_us_drawer"
-        app:showAsAction="always"
-        android:title="Contact Us"/>
-    <item
         android:id="@+id/action_my_khqr"
         android:icon="@drawable/ic_khqr_toolbar"
         app:showAsAction="always"

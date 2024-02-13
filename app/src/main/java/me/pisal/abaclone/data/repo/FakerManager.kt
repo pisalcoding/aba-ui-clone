@@ -12,9 +12,10 @@ object FakerManager {
         }
     }
 
-    suspend fun getInstance(): Faker {
+    fun getInstance(): Faker {
         if (!::instance.isInitialized) {
-            throw RuntimeException("Faker is not initialized! Make sure you called FakerManager.init() before using FakerManager.getInstance()")
+            // throw RuntimeException("Faker is not initialized! Make sure you called FakerManager.init() before using FakerManager.getInstance()")
+            return Faker()
         }
         return instance
     }

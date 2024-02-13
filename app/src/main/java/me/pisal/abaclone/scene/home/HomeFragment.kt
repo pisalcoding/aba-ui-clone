@@ -20,7 +20,6 @@ class HomeFragment : BaseFragment(sensitive = false, requireAuth = false) {
             setToolbarTitle("")
             hideBlurIfNotLoading()
             showActionBar()
-            setNavigationBackgroundColor(R.color.app_accent)
         }
     }
 
@@ -37,6 +36,12 @@ class HomeFragment : BaseFragment(sensitive = false, requireAuth = false) {
         super.onViewCreated(view, savedInstanceState)
         setupMenus()
         initListeners()
+        withMainActivity {
+            safeRunOnUiThread(200L) {
+                setNavigationBackgroundColor(R.color.app_accent)
+                setStatusBarColor(R.color.app_primary)
+            }
+        }
     }
 
     private fun setupMenus() {
