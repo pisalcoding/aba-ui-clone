@@ -1,7 +1,6 @@
 package me.pisal.abaclone.scene.pin.auth
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,21 +9,18 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import me.pisal.abaclone.R
 import me.pisal.abaclone.common.TResult
+import me.pisal.abaclone.common.extension.shake
 import me.pisal.abaclone.databinding.FragmentPinAuthBinding
 import me.pisal.abaclone.scene.hideActionBar
 import me.pisal.abaclone.scene.hideBlurIfNotLoading
 import me.pisal.abaclone.scene.setNavigationBackgroundColor
 import me.pisal.abaclone.scene.withMainActivity
+import me.pisal.alerter.Alerter
 
 class PinAuthFragment : Fragment() {
 
     private val viewModel by viewModels<PinAuthViewModel>()
     private lateinit var binding: FragmentPinAuthBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // setStyle(STYLE_NO_FRAME, R.style.FullScreenTransparentDialogStyle)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -70,14 +66,19 @@ class PinAuthFragment : Fragment() {
 
     private fun authenticate(pin: String) {
         viewModel.authenticate(pin).observe(viewLifecycleOwner) {
-            when(it) {
+            when (it) {
                 is TResult.Success -> {
                     withMainActivity {
                         mainViewModel.authStatusChanged(true)
                     }
                 }
+
                 is TResult.Failure -> {
-                    Log.e("Error", it.message ?: "")
+                    Alerter.error()
+                        .withTitle("Invalid PIN!")
+                        .withMessage("Please try and make sure you inputted the correct PIN.")
+                        .show(childFragmentManager, "PinAuthFragment")
+                    binding.pinAuthView.clearInputs()
                 }
             }
         }
