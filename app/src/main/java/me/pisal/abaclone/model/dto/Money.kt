@@ -1,4 +1,4 @@
-package me.pisal.abaclone.model.entity
+package me.pisal.abaclone.model.dto
 
 import me.pisal.abaclone.common.Currency
 import me.pisal.abaclone.common.Currency.USD

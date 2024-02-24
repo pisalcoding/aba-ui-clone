@@ -1,5 +1,7 @@
 package me.pisal.abaclone.model.entity
 
+import android.media.browse.MediaBrowser.ItemCallback
+import androidx.recyclerview.widget.DiffUtil
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -59,5 +61,25 @@ data class TrxTemplate(
 	val version: Int? = null,
 
 	@field:SerializedName("sta")
-	val status: Int? = null
-): Serializable
+	val status: Int? = null,
+
+	val currency: String,
+	val iconDrawableRes: Int? = null,
+	val iconUrl: String? = null,
+): Serializable {
+
+	fun subtitle(): String {
+		return "$destinationAcc | $currency"
+	}
+}
+
+object TrxTemplateDiff : DiffUtil.ItemCallback<TrxTemplate>() {
+	override fun areItemsTheSame(oldItem: TrxTemplate, newItem: TrxTemplate): Boolean {
+		return oldItem.id == newItem.id
+	}
+
+	override fun areContentsTheSame(oldItem: TrxTemplate, newItem: TrxTemplate): Boolean {
+		return oldItem.id == newItem.id && oldItem.destinationAcc == newItem.destinationAcc && oldItem.title == newItem.title
+	}
+
+}

@@ -1,7 +1,7 @@
 package me.pisal.abaclone.common.extension
 
 import me.pisal.abaclone.common.Currency
-import me.pisal.abaclone.model.entity.Money
+import me.pisal.abaclone.model.dto.Money
 import java.math.BigDecimal
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols

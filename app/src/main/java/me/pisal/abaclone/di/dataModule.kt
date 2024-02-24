@@ -8,6 +8,8 @@ import me.pisal.abaclone.data.repo.menu.LocalMenusRepository
 import me.pisal.abaclone.data.repo.menu.MenusRepository
 import me.pisal.abaclone.data.repo.notification.INotificationRepository
 import me.pisal.abaclone.data.repo.notification.NotificationRepository
+import me.pisal.abaclone.data.repo.template.ITemplateRepository
+import me.pisal.abaclone.data.repo.template.TemplateRepository
 import org.koin.dsl.module
 
 val dataModule = module {
@@ -27,4 +29,6 @@ val dataModule = module {
     single<INotificationRepository> {
         NotificationRepository()
     }
+
+    single<ITemplateRepository> { TemplateRepository() }
 }

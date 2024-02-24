@@ -1,7 +1,7 @@
 package me.pisal.abaclone.data.repo.notification
 
 import me.pisal.abaclone.common.TResult
-import me.pisal.abaclone.model.dto.Notification
+import me.pisal.abaclone.model.entity.Notification
 import me.pisal.abaclone.model.dto.ResponseWrapper
 import me.pisal.abaclone.model.enumeration.NotificationType
 

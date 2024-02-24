@@ -1,4 +1,4 @@
-package me.pisal.abaclone.model.dto
+package me.pisal.abaclone.model.entity
 
 import androidx.recyclerview.widget.DiffUtil
 

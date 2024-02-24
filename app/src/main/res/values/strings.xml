@@ -37,4 +37,5 @@
     <string name="tab_transactions">TRANSACTIONS</string>
     <string name="tab_announcements">ANNOUNCEMENTS</string>
     <string name="notifications">Notifications</string>
+    <string name="favorites">Favorites</string>
 </resources>

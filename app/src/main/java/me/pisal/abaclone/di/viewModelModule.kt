@@ -9,6 +9,7 @@ import me.pisal.abaclone.scene.notifcation.announcement.AnnouncementNotiViewMode
 import me.pisal.abaclone.scene.notifcation.transaction.TransactionNotiViewModel
 import me.pisal.abaclone.scene.payment.PaymentsViewModel
 import me.pisal.abaclone.scene.scanqr.ScanQrViewModel
+import me.pisal.abaclone.scene.template.transfer.TransferTemplatesViewModel
 import me.pisal.abaclone.scene.transfer.TransfersViewModel
 import me.pisal.abaclone.thirdparty.mlkit.camera.WorkflowModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -28,4 +29,5 @@ val viewModelModule = module {
     viewModel { NotificationsViewModel() }
     viewModel { TransactionNotiViewModel(get()) }
     viewModel { AnnouncementNotiViewModel(get()) }
+    viewModel { TransferTemplatesViewModel(get()) }
 }

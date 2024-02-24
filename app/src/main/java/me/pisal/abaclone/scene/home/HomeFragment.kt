@@ -82,6 +82,8 @@ class HomeFragment : BaseFragment(sensitive = false, requireAuth = false) {
 
                 menuR3c1.root to R.id.scanQrFragment,
                 menuR3c2.root to R.id.newLoansFragment,
+
+                menuQuickTransfer to R.id.transferTemplatesFragment
             ).forEach { item ->
                 item.first.setOnClickListener { findNavController().navigate(item.second) }
             }

@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import me.pisal.abaclone.databinding.ItemTransactionNotiBinding
-import me.pisal.abaclone.model.dto.Notification
-import me.pisal.abaclone.model.dto.NotificationDiff
+import me.pisal.abaclone.model.entity.Notification
+import me.pisal.abaclone.model.entity.NotificationDiff
 
 class TransactionNotiAdapter :
     ListAdapter<Notification, TransactionNotiAdapter.ViewHolder>(NotificationDiff) {

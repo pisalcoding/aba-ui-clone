@@ -3,7 +3,7 @@
     <data>
         <import type="me.pisal.abaclone.model.entity.Account"/>
         <import type="android.view.View"/>
-        <variable name="item" type="Account" />
+        <variable name="item" type="me.pisal.abaclone.model.entity.Account" />
     </data>
     <com.google.android.material.card.MaterialCardView
         xmlns:android="http://schemas.android.com/apk/res/android"

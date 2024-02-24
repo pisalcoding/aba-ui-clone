@@ -4,6 +4,7 @@ import android.graphics.Color
 import me.pisal.abaclone.common.Currency
 import me.pisal.abaclone.common.extension.formatted
 import me.pisal.abaclone.common.extension.toMoney
+import me.pisal.abaclone.model.dto.Money
 import java.io.Serializable
 
 data class Account(

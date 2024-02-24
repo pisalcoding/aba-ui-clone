@@ -5,7 +5,7 @@
 
         <variable
             name="item"
-            type="me.pisal.abaclone.model.dto.Notification" />
+            type="me.pisal.abaclone.model.entity.Notification" />
     </data>
 
     <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"

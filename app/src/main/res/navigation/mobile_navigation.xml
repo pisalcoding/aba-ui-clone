@@ -45,5 +45,9 @@
         android:id="@+id/notificationsFragment"
         android:name="me.pisal.abaclone.scene.notifcation.NotificationsFragment"
         android:label="@string/notifications" />
+    <fragment
+        android:id="@+id/transferTemplatesFragment"
+        android:name="me.pisal.abaclone.scene.template.transfer.TransferTemplatesFragment"
+        android:label="TransferTemplatesFragment" />
 
 </navigation>

@@ -8,13 +8,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/color_light_background">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/menu_quick_payment"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            android:background="@color/app_secondary"
+            android:background="@color/app_primary"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -29,14 +30,14 @@
                     style="@style/TextAppearance.AppCompat.Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/quick_transfer"
+                    android:text="@string/favorites"
                     android:textColor="?colorOnPrimary" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/TextAppearance.Material3.BodySmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/save_here_aba_accounts_of_your_relatives_friends_or_business_partners_to_whom_you_transfer_funds_frequently"
+                    android:text="@string/transfer_money_to_your_fiends_relatives_or_partners_in_couple_of_simple_steps"
                     android:textColor="?colorOnPrimary" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -47,6 +48,15 @@
                 android:scaleType="fitEnd"
                 android:src="@drawable/ic_transfer_templates" />
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="16dp"
+            app:defaultQueryHint="Search"
+            app:queryHint="Search"
+            android:background="?colorSurface"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcl"

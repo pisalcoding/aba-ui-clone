@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import me.pisal.abaclone.databinding.ItemAnnouncementNotiBinding
-import me.pisal.abaclone.model.dto.Notification
-import me.pisal.abaclone.model.dto.NotificationDiff
+import me.pisal.abaclone.model.entity.Notification
+import me.pisal.abaclone.model.entity.NotificationDiff
 
-class AnnouncementNotiAdapter: ListAdapter<Notification, AnnouncementNotiAdapter.ViewHolder>(NotificationDiff) {
+class AnnouncementNotiAdapter: ListAdapter<Notification, AnnouncementNotiAdapter.ViewHolder>(
+    NotificationDiff
+) {
 
     inner class ViewHolder(private val binding: ItemAnnouncementNotiBinding)
         : RecyclerView.ViewHolder(binding.root) {

@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="reticle_ripple">#9AFFFFFF</color>
+    <color name="color_light_background">#bac1c3</color>
     <color name="barcode_reticle_background">#99000000</color>
     <color name="barcode_reticle_stroke">#40000000</color>
     <color name="color_bakong">#E21A1A</color>
