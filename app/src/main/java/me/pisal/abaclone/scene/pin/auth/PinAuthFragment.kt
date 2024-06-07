@@ -1,6 +1,7 @@
 package me.pisal.abaclone.scene.pin.auth
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,10 @@ import me.pisal.abaclone.scene.hideBlurIfNotLoading
 import me.pisal.abaclone.scene.setNavigationBackgroundColor
 import me.pisal.abaclone.scene.withMainActivity
 import me.pisal.alerter.Alerter
+import me.pisal.fingerprint.auth.BiometricFailureBlock
+import me.pisal.fingerprint.auth.BiometricSuccessBlock
+import me.pisal.fingerprint.auth.FingerprintAuth
+import me.pisal.fingerprint.auth.fingerprint.FingerprintDialogFragment
 
 class PinAuthFragment : Fragment() {
 
@@ -36,6 +41,17 @@ class PinAuthFragment : Fragment() {
         withMainActivity {
             hideActionBar()
             setNavigationBackgroundColor(R.color.app_primary)
+            authenticateWithFingerprint(
+                doOnSuccess = {
+                    withMainActivity {
+                        mainViewModel.authStatusChanged(true)
+                    }
+                },
+                doOnFailure = {
+                    Log.d("FingerprintAuth", "Failed: $it")
+                }
+            )
+
             mainViewModel.authenticated.observe(viewLifecycleOwner) {
                 if (it) {
                     findNavController().navigateUp()
@@ -64,7 +80,28 @@ class PinAuthFragment : Fragment() {
         }
     }
 
+    private fun authenticateWithFingerprint(
+        doOnSuccess: BiometricSuccessBlock,
+        doOnFailure: BiometricFailureBlock,
+    ) {
+        withMainActivity {
+
+            val fingerprintFragment = FingerprintDialogFragment.newInstance()
+            FingerprintAuth.from(this)
+                .withDialogView(fingerprintFragment)
+                .doOnSuccess {
+                    doOnSuccess(this)
+                }
+                .doOnFailure {
+                    doOnFailure(it)
+                }
+                .authenticate()
+        }
+    }
+
+
     private fun authenticate(pin: String) {
+
         viewModel.authenticate(pin).observe(viewLifecycleOwner) {
             when (it) {
                 is TResult.Success -> {

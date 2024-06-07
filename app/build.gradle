@@ -62,6 +62,7 @@ dependencies {
     // Third-party UI libraries
     implementation 'com.github.pisalcoding:android-passcode-view:1.0.0'
     implementation 'com.github.pisalcoding:alerter:v1.0.1'
+    implementation 'com.github.pisalcoding:android-fingerprint-auth:1.0.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'io.bloco:faker:2.0.4'
 
